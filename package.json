@@ -35,6 +35,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
+    "postinstall": "build-storybook -c .storybook -o public",
     "heroku-postbuild": "build-storybook -c .storybook -o public",
     "storybook": "start-storybook -p 8080 -c .storybook"
   },
