@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import { Icon, Button, Input, AutoComplete } from 'antd';
+import withInfo from '../../../../common/withInfo';
+
+const props = {
+  size: 'string',
+  style: '{{ styles }}',
+  dataSource: '[]',
+  onSelect: 'function',
+  onSearch: 'function',
+  placeholder: 'string',
+  optionLabelProp: 'string',
+};
 
 const Option = AutoComplete.Option;
 
@@ -12,7 +23,9 @@ function getRandomInt(max, min = 0) {
 }
 
 function searchResult(query) {
-  return (new Array(getRandomInt(5))).join('.').split('.')
+  return new Array(getRandomInt(5))
+    .join('.')
+    .split('.')
     .map((item, idx) => ({
       query,
       category: `${query}${idx}`,
@@ -37,17 +50,16 @@ function renderOption(item) {
   );
 }
 
-
 class Uncertain extends Component {
   state = {
-    dataSource: []
+    dataSource: [],
   };
 
-  handleSearch = (value) => {
+  handleSearch = value => {
     this.setState({
       dataSource: value ? searchResult(value) : [],
     });
-  }
+  };
 
   render() {
     const { dataSource } = this.state;
@@ -67,11 +79,11 @@ class Uncertain extends Component {
             optionLabelProp="text"
           >
             <Input
-              suffix={(
+              suffix={
                 <Button className="search-btn" size="large" type="primary">
                   <Icon type="search" />
                 </Button>
-              )}
+              }
             />
           </AutoComplete>
         </div>
@@ -79,5 +91,5 @@ class Uncertain extends Component {
     );
   }
 }
- 
-export default Uncertain;
+
+export default withInfo(Uncertain, props);

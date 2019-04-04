@@ -8,14 +8,12 @@ import Pattern from './LookupPatterns';
 import Uncertian from './Uncertain';
 
 class AutoComplatePage extends Component {
-  state = {}
-  render() { 
+  state = {};
+  render() {
     return (
       <Fragment>
         <h1 className="title">AutoComplate</h1>
-        <p className="text">
-          Autocomplete function of input field.
-        </p>
+        <p className="text">Autocomplete function of input field.</p>
 
         <h2 className="title">When To Use</h2>
         <p className="text">
@@ -30,10 +28,9 @@ class AutoComplatePage extends Component {
         <NonCase />
         <Pattern />
         <Uncertian />
-
       </Fragment>
     );
   }
 }
- 
+
 export default AutoComplatePage;

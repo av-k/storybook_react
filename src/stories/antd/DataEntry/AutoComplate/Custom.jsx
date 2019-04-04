@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
+import withInfo from '../../../../common/withInfo';
+
+const props = {
+  result: 'string[]',
+  onSearch: 'function',
+  placeholder: 'string',
+};
 
 class Custom extends Component {
   state = {
-    result: []
+    result: [],
   };
 
   render() {
     const Option = AutoComplete.Option;
     const { result } = this.state;
-    const children = result.map((email) => {
+    const children = result.map(email => {
       return <Option key={email}>{email}</Option>;
     });
 
@@ -17,26 +24,28 @@ class Custom extends Component {
       <section className="example">
         <h3 className="ex-title">Customized</h3>
 
-          <AutoComplete
-            style={{ width: 200 }}
-            onSearch={this.handleSearch}
-            placeholder="input here"
-          >
-            {children}
-          </AutoComplete>
+        <AutoComplete
+          style={{ width: 200 }}
+          onSearch={this.handleSearch}
+          placeholder="input here"
+        >
+          {children}
+        </AutoComplete>
       </section>
     );
   }
 
-  handleSearch = (value) => {
+  handleSearch = value => {
     let result;
     if (!value || value.indexOf('@') >= 0) {
       result = [];
     } else {
-      result = ['gmail.com', '163.com', 'qq.com'].map(domain => `${value}@${domain}`);
+      result = ['gmail.com', '163.com', 'qq.com'].map(
+        domain => `${value}@${domain}`,
+      );
     }
     this.setState({ result });
-  }
+  };
 }
- 
-export default Custom;
+
+export default withInfo(Custom, props);

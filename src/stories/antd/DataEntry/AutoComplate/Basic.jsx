@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import 'antd/lib/auto-complete/style';
+import withInfo from '../../../../common/withInfo';
+
+const props = {
+  dataSource: 'string[]',
+  onSearch: 'function',
+  onSelect: 'function',
+  placeholder: 'string',
+};
 
 class Basic extends Component {
   state = {
-    dataSource: []
+    dataSource: [],
   };
   render() {
     return (
@@ -21,11 +29,10 @@ class Basic extends Component {
   }
 
   handleSearch = value => {
-    this.setState({ dataSource: !value
-        ? []
-        : [value, value + value, value + value + value],
+    this.setState({
+      dataSource: !value ? [] : [value, value + value, value + value + value],
     });
   };
 }
 
-export default Basic;
+export default withInfo(Basic, props);

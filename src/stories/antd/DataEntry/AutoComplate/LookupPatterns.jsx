@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { Icon, Input, AutoComplete } from 'antd';
+import withInfo from '../../../../common/withInfo';
+
+const props = {
+  dropdownClassName: 'string',
+  dropdownMatchSelectWidth: 'boolean',
+  dropdownStyle: '{{styles}}',
+  size: 'string',
+  dataSource: '{}[]',
+  placeholder: 'string',
+  optionLabelProp: 'string',
+};
 
 class Pattern extends Component {
-  state = {}
+  state = {};
   render() {
     const Option = AutoComplete.Option;
     const OptGroup = AutoComplete.OptGroup;
@@ -17,7 +28,7 @@ class Pattern extends Component {
           {
             title: 'AntDesign UI',
             count: 10600,
-          }
+          },
         ],
       },
       {
@@ -30,7 +41,7 @@ class Pattern extends Component {
           {
             title: 'AntDesign 是啥',
             count: 30010,
-          }
+          },
         ],
       },
       {
@@ -39,40 +50,41 @@ class Pattern extends Component {
           {
             title: 'AntDesign 是一个设计语言',
             count: 100000,
-          }
+          },
         ],
-      }
+      },
     ];
-    const options = dataSource.map(group => (
-      <OptGroup
-        key={group.title}
-        label={this.renderTitle(group.title)}
-      >
-        {group.children.map(opt => (
-          <Option key={opt.title} value={opt.title}>
-            {opt.title}
-            <span className="certain-search-item-count">{opt.count} 人 关注</span>
-          </Option>
-        ))}
-      </OptGroup>
-    )).concat([
-      <Option disabled key="all" className="show-all">
-        <a
-          href="https://www.google.com/search?q=antd"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          查看所有结果
-        </a>
-      </Option>,
-    ]);
+    const options = dataSource
+      .map(group => (
+        <OptGroup key={group.title} label={this.renderTitle(group.title)}>
+          {group.children.map(opt => (
+            <Option key={opt.title} value={opt.title}>
+              {opt.title}
+              <span className="certain-search-item-count">
+                {opt.count} 人 关注
+              </span>
+            </Option>
+          ))}
+        </OptGroup>
+      ))
+      .concat([
+        <Option disabled key="all" className="show-all">
+          <a
+            href="https://www.google.com/search?q=antd"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            查看所有结果
+          </a>
+        </Option>,
+      ]);
 
     return (
       <section className="example">
         <h3 className="ex-title">Lookup-Patterns - Certain Category</h3>
-        
-        <div style={{width: '40%'}}>
-        <AutoComplete
+
+        <div style={{ width: '40%' }}>
+          <AutoComplete
             className="certain-category-search"
             dropdownClassName="certain-category-search-dropdown"
             dropdownMatchSelectWidth={false}
@@ -83,7 +95,9 @@ class Pattern extends Component {
             placeholder="input here"
             optionLabelProp="value"
           >
-            <Input suffix={<Icon type="search" className="certain-category-icon" />} />
+            <Input
+              suffix={<Icon type="search" className="certain-category-icon" />}
+            />
           </AutoComplete>
         </div>
       </section>
@@ -99,11 +113,12 @@ class Pattern extends Component {
           href="https://www.google.com/search?q=antd"
           target="_blank"
           rel="noopener noreferrer"
-        >更多
+        >
+          更多
         </a>
       </span>
     );
   }
 }
- 
-export default Pattern;
+
+export default withInfo(Pattern, props);

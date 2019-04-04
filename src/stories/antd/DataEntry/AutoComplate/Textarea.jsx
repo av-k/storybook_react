@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import { AutoComplete, Input } from 'antd';
+import withInfo from '../../../../common/withInfo';
 
+const props = {
+  dataSource: 'array[]',
+  onSelect: 'function',
+  onSearch: 'function',
+  onKeyPress: 'function',
+  placeholder: 'string',
+};
 class Textarea extends Component {
   state = {
-    dataSource: []
+    dataSource: [],
   };
 
   render() {
@@ -29,13 +37,10 @@ class Textarea extends Component {
     );
   }
 
-  handleSearch = (value) => this.setState({
-      dataSource: !value ? [] : [
-        value,
-        value + value,
-        value + value + value,
-      ],
+  handleSearch = value =>
+    this.setState({
+      dataSource: !value ? [] : [value, value + value, value + value + value],
     });
 }
- 
-export default Textarea;
+
+export default withInfo(Textarea, props);

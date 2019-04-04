@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
+import withInfo from '../../../../common/withInfo';
 
+const props = {
+  dataSource: 'array[]',
+  filterOption: 'function',
+  placeholder: 'string',
+};
 class NonCase extends Component {
   render() {
     const dataSource = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
@@ -12,11 +18,15 @@ class NonCase extends Component {
           style={{ width: 200 }}
           dataSource={dataSource}
           placeholder="try to type `b`"
-          filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
+          filterOption={(inputValue, option) =>
+            option.props.children
+              .toUpperCase()
+              .indexOf(inputValue.toUpperCase()) !== -1
+          }
         />
       </section>
     );
   }
 }
- 
-export default NonCase;
+
+export default withInfo(NonCase, props);
