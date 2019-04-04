@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { AutoComplete, Input } from 'antd';
 import withInfo from '../../../../common/withInfo';
+import {
+  onKeyPress,
+  onSelect,
+  onSearch,
+  placeholder,
+} from '../../../../common/propsAPI';
 
-const props = {
-  dataSource: 'array[]',
-  onSelect: 'function',
-  onSearch: 'function',
-  onKeyPress: 'function',
-  placeholder: 'string',
-};
 class Textarea extends Component {
   state = {
     dataSource: [],
@@ -43,4 +42,9 @@ class Textarea extends Component {
     });
 }
 
-export default withInfo(Textarea, props);
+export default withInfo(Textarea, {
+  onKeyPress,
+  onSelect,
+  onSearch,
+  placeholder,
+});

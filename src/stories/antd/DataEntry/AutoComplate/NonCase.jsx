@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import withInfo from '../../../../common/withInfo';
+import {
+  dataSource,
+  filterOption,
+  placeholder,
+} from '../../../../common/propsAPI';
 
-const props = {
-  dataSource: 'array[]',
-  filterOption: 'function',
-  placeholder: 'string',
-};
 class NonCase extends Component {
   render() {
     const dataSource = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
@@ -29,4 +29,4 @@ class NonCase extends Component {
   }
 }
 
-export default withInfo(NonCase, props);
+export default withInfo(NonCase, { dataSource, filterOption, placeholder });

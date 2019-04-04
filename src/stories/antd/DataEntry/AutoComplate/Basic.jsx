@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import 'antd/lib/auto-complete/style';
 import withInfo from '../../../../common/withInfo';
-
-const props = {
-  dataSource: 'string[]',
-  onSearch: 'function',
-  onSelect: 'function',
-  placeholder: 'string',
-};
+import {
+  dataSource,
+  onSearch,
+  onSelect,
+  placeholder,
+} from '../../../../common/propsAPI';
 
 class Basic extends Component {
   state = {
@@ -35,4 +34,4 @@ class Basic extends Component {
   };
 }
 
-export default withInfo(Basic, props);
+export default withInfo(Basic, { dataSource, onSearch, onSelect, placeholder });

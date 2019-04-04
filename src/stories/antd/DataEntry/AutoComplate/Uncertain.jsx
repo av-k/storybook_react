@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import { Icon, Button, Input, AutoComplete } from 'antd';
 import withInfo from '../../../../common/withInfo';
-
-const props = {
-  size: 'string',
-  style: '{{ styles }}',
-  dataSource: '[]',
-  onSelect: 'function',
-  onSearch: 'function',
-  placeholder: 'string',
-  optionLabelProp: 'string',
-};
+import {
+  size,
+  dataSou,
+  onSelect,
+  onSearch,
+  placeholder,
+  optionLabelProp,
+} from '../../../../common/propsAPI';
 
 const Option = AutoComplete.Option;
-
-function onSelect(value) {
-  console.log('onSelect', value);
-}
 
 function getRandomInt(max, min = 0) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // eslint-disable-line no-mixed-operators
@@ -73,7 +67,6 @@ class Uncertain extends Component {
             size="large"
             style={{ width: '100%' }}
             dataSource={dataSource.map(renderOption)}
-            onSelect={onSelect}
             onSearch={this.handleSearch}
             placeholder="input here"
             optionLabelProp="text"
@@ -92,4 +85,11 @@ class Uncertain extends Component {
   }
 }
 
-export default withInfo(Uncertain, props);
+export default withInfo(Uncertain, {
+  size,
+  dataSou,
+  onSelect,
+  onSearch,
+  placeholder,
+  optionLabelProp,
+});

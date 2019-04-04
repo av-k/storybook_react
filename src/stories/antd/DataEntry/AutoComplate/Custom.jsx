@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import withInfo from '../../../../common/withInfo';
-
-const props = {
-  result: 'string[]',
-  onSearch: 'function',
-  placeholder: 'string',
-};
+import { onSearch, placeholder } from '../../../../common/propsAPI';
 
 class Custom extends Component {
   state = {
@@ -48,4 +43,4 @@ class Custom extends Component {
   };
 }
 
-export default withInfo(Custom, props);
+export default withInfo(Custom, { onSearch, placeholder });

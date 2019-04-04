@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Icon, Input, AutoComplete } from 'antd';
 import withInfo from '../../../../common/withInfo';
-
-const props = {
-  dropdownClassName: 'string',
-  dropdownMatchSelectWidth: 'boolean',
-  dropdownStyle: '{{styles}}',
-  size: 'string',
-  dataSource: '{}[]',
-  placeholder: 'string',
-  optionLabelProp: 'string',
-};
+import {
+  dropdownClassName,
+  dropdownMatchSelectWidth,
+  dropdownStyle,
+  size,
+  dataSource,
+  placeholder,
+  optionLabelProp,
+} from '../../../../common/propsAPI';
 
 class Pattern extends Component {
   state = {};
@@ -121,4 +120,12 @@ class Pattern extends Component {
   }
 }
 
-export default withInfo(Pattern, props);
+export default withInfo(Pattern, {
+  dropdownClassName,
+  dropdownMatchSelectWidth,
+  dropdownStyle,
+  size,
+  dataSource,
+  placeholder,
+  optionLabelProp,
+});
