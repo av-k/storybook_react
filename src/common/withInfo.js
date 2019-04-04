@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon } from 'antd';
+import { Button, Icon, Tooltip } from 'antd';
 
 export default (Component, props) =>
   class withInfo extends React.Component {
@@ -10,6 +10,7 @@ export default (Component, props) =>
       this.setState(({ showInfo }) => ({ showInfo: !showInfo }));
     };
     render() {
+      console.log(props);
       return (
         <>
           <Component />
@@ -20,10 +21,17 @@ export default (Component, props) =>
             <div style={{ display: !this.state.showInfo && 'none' }}>
               <h4 className="info-title">Props to use</h4>
               <ul>
-                {Object.keys(props).map(key => (
-                  <li>
-                    <span className="info-prop">{key}</span> :{' '}
-                    <span className="info-prop-value">{props[key]}</span>
+                {Object.keys(props).map(propName => (
+                  <li key={propName}>
+                    <Tooltip
+                      title={props[propName].description}
+                      placement="right"
+                    >
+                      <span className="info-prop-name">{propName}</span>
+                    </Tooltip>
+                    <span className="info-prop-type">
+                      : {props[propName].type}
+                    </span>
                   </li>
                 ))}
               </ul>
