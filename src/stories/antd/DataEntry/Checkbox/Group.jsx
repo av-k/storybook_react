@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
+import withInfo from '../../../../common/withInfo';
 
+const props = {
+  options: '{}[]',
+  disabled: 'boolean',
+  defaultValue: 'string[]',
+};
 class Group extends Component {
   render() {
     const CheckboxGroup = Checkbox.Group;
@@ -24,13 +30,19 @@ class Group extends Component {
         <h3 className="ex-title">Checkbox Group</h3>
 
         <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
-        <br /><br />
+        <br />
+        <br />
         <CheckboxGroup options={options} defaultValue={['Pear']} />
-        <br /><br />
-        <CheckboxGroup options={optionsWithDisabled} disabled defaultValue={['Apple']} />
+        <br />
+        <br />
+        <CheckboxGroup
+          options={optionsWithDisabled}
+          disabled
+          defaultValue={['Apple']}
+        />
       </section>
     );
   }
 }
- 
-export default Group;
+
+export default withInfo(Group, props);

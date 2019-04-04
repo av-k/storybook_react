@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
+import withInfo from '../../../../common/withInfo';
+
+const props = {
+  indeterminate: 'boolean',
+  onChange: 'function',
+  checked: 'boolean',
+  options: '{}',
+  checkedList: 'string[]',
+};
 
 const defaultCheckedList = ['Apple', 'Orange'];
 const CheckboxGroup = Checkbox.Group;
 const plainOptions = ['Apple', 'Pear', 'Orange'];
 
 class CheckAll extends Component {
-
   state = {
     checkedList: defaultCheckedList,
     indeterminate: true,
@@ -28,26 +36,29 @@ class CheckAll extends Component {
           </Checkbox>
         </div>
         <br />
-        <CheckboxGroup options={plainOptions} value={this.state.checkedList} onChange={this.onChange} />
+        <CheckboxGroup
+          options={plainOptions}
+          value={this.state.checkedList}
+          onChange={this.onChange}
+        />
       </section>
     );
   }
 
-  onChange = checkedList => this.setState(
-    {
+  onChange = checkedList =>
+    this.setState({
       checkedList,
-      indeterminate: !!checkedList.length && (checkedList.length < plainOptions.length),
+      indeterminate:
+        !!checkedList.length && checkedList.length < plainOptions.length,
       checkAll: checkedList.length === plainOptions.length,
-    }
-  );
+    });
 
-  onCheckAllChange = e => this.setState(
-    {
+  onCheckAllChange = e =>
+    this.setState({
       checkedList: e.target.checked ? plainOptions : [],
       indeterminate: false,
       checkAll: e.target.checked,
-    }
-  );
+    });
 }
- 
-export default CheckAll;
+
+export default withInfo(CheckAll, props);

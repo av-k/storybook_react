@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { Checkbox, Button } from 'antd';
+import withInfo from '../../../../common/withInfo';
 
+const props = {
+  checked: 'boolean',
+  disabled: 'boolean',
+  onChange: 'function',
+};
 class Controll extends Component {
-
   state = {
     checked: true,
     disabled: false,
   };
 
   render() {
-    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${this.state.disabled ? 'Disabled' : 'Enabled'}`;
+    const label = `${this.state.checked ? 'Checked' : 'Unchecked'}-${
+      this.state.disabled ? 'Disabled' : 'Enabled'
+    }`;
     return (
       <section className="example">
         <h3 className="ex-title">Controlled Checkbox</h3>
@@ -25,11 +32,7 @@ class Controll extends Component {
         </p>
 
         <p>
-          <Button
-            type="primary"
-            size="small"
-            onClick={this.toggleChecked}
-          >
+          <Button type="primary" size="small" onClick={this.toggleChecked}>
             {!this.state.checked ? 'Check' : 'Uncheck'}
           </Button>
           <Button
@@ -51,5 +54,5 @@ class Controll extends Component {
 
   onChange = e => this.setState({ checked: e.target.checked });
 }
- 
-export default Controll;
+
+export default withInfo(Controll, props);

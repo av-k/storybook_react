@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
+import withInfo from '../../../../common/withInfo';
 
+const props = {
+  onChange: 'boolean',
+};
 class Basic extends Component {
   render() {
     return (
@@ -11,5 +15,5 @@ class Basic extends Component {
     );
   }
 }
- 
-export default Basic;
+
+export default withInfo(Basic, props);

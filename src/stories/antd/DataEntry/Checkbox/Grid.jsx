@@ -1,26 +1,42 @@
 import React, { Component } from 'react';
 import { Checkbox, Row, Col } from 'antd';
+import withInfo from '../../../../common/withInfo';
 
+const props = {
+  value: 'string',
+};
 class Grid extends Component {
-  state = {}
-  render() { 
+  state = {};
+  render() {
     return (
       <section className="example">
         <h3 className="ex-title">Use with Grid</h3>
 
         <Checkbox.Group style={{ width: '100%' }}>
           <Row>
-            <Col span={8}><Checkbox value="A">A</Checkbox></Col>
-            <Col span={8}><Checkbox value="B">B</Checkbox></Col>
-            <Col span={8}><Checkbox value="C">C</Checkbox></Col>
-            <Col span={8}><Checkbox value="D">D</Checkbox></Col>
-            <Col span={8}><Checkbox value="E">E</Checkbox></Col>
-            <Col span={8}><Checkbox value="F">F</Checkbox></Col>
+            <Col span={8}>
+              <Checkbox value="A">A</Checkbox>
+            </Col>
+            <Col span={8}>
+              <Checkbox value="B">B</Checkbox>
+            </Col>
+            <Col span={8}>
+              <Checkbox value="C">C</Checkbox>
+            </Col>
+            <Col span={8}>
+              <Checkbox value="D">D</Checkbox>
+            </Col>
+            <Col span={8}>
+              <Checkbox value="E">E</Checkbox>
+            </Col>
+            <Col span={8}>
+              <Checkbox value="F">F</Checkbox>
+            </Col>
           </Row>
         </Checkbox.Group>
       </section>
     );
   }
 }
- 
-export default Grid;
+
+export default withInfo(Grid, props);
