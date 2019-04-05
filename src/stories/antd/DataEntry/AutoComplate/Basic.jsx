@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import 'antd/lib/auto-complete/style';
-import withInfo from '../../../../common/withInfo';
+import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import {
   dataSource,
   onSearch,
   onSelect,
   placeholder,
-} from '../../../../common/propsAPI';
+} from '../../../../common/propsCollection';
 
 class Basic extends Component {
   state = {
     dataSource: [],
   };
+
   render() {
     return (
-      <section className="example">
-        <h3 className="ex-title">Basic Usage</h3>
-        <AutoComplete
-          dataSource={this.state.dataSource}
-          style={{ width: 200 }}
-          onSearch={this.handleSearch}
-          placeholder="input here"
-        />
-      </section>
+      <>
+        <section className="example">
+          <h3 className="ex-title">Basic Usage</h3>
+          <AutoComplete
+            dataSource={this.state.dataSource}
+            style={{ width: 200 }}
+            onSearch={this.handleSearch}
+            placeholder="input here"
+          />
+        </section>
+      </>
     );
   }
 
@@ -34,4 +37,36 @@ class Basic extends Component {
   };
 }
 
-export default withInfo(Basic, { dataSource, onSearch, onSelect, placeholder });
+export default injectInfoWithSourceCode(
+  Basic,
+  { dataSource, onSearch, onSelect, placeholder },
+  () => `import { AutoComplete } from 'antd';
+
+  class Basic extends Component {
+	state = {
+	  dataSource: [],
+	};
+  
+	render() {
+	  return (
+		<>
+		  <section className="example">
+			<h3 className="ex-title">Basic Usage</h3>
+			<AutoComplete
+			  dataSource={this.state.dataSource}
+			  style={{ width: 200 }}
+			  onSearch={this.handleSearch}
+			  placeholder="input here"
+			/>
+		  </section>
+		</>
+	  );
+	}
+  
+	handleSearch = value => {
+	  this.setState({
+		dataSource: !value ? [] : [value, value + value, value + value + value],
+	  });
+	};
+  }`,
+);
