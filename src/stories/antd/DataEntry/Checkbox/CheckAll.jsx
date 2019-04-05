@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
-  indeterminate,
-  onChange,
-  checked,
-  options,
-} from '../../../../common/propsCollection';
+import { CheckBoxProps } from '../../../../common/propsCollection';
+
+const { indeterminate, onChange, checked, options } = CheckBoxProps;
 
 const defaultCheckedList = ['Apple', 'Orange'];
 const CheckboxGroup = Checkbox.Group;

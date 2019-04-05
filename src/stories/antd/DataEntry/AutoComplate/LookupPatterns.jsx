@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Icon, Input, AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
+import { AutoCompleteProps } from '../../../../common/propsCollection';
+
+const {
   dropdownClassName,
   dropdownMatchSelectWidth,
   dropdownStyle,
@@ -9,7 +11,7 @@ import {
   dataSource,
   placeholder,
   optionLabelProp,
-} from '../../../../common/propsCollection';
+} = AutoCompleteProps;
 
 class Pattern extends Component {
   state = {};

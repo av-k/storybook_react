@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { Checkbox } from 'antd';
-import {
-  options,
-  disabled,
-  defaultValue,
-} from '../../../../common/propsCollection';
+import { CheckBoxProps } from '../../../../common/propsCollection';
+
+const { options, disabled, defaultValue } = CheckBoxProps;
 
 class Group extends Component {
   render() {

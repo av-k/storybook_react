@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
-  dataSource,
-  filterOption,
-  placeholder,
-} from '../../../../common/propsCollection';
+import { AutoCompleteProps } from '../../../../common/propsCollection';
+
+const { dataSource, filterOption, placeholder } = AutoCompleteProps;
 
 class NonCase extends Component {
   render() {

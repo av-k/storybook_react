@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import 'antd/lib/auto-complete/style';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
-  dataSource,
-  onSearch,
-  onSelect,
-  placeholder,
-} from '../../../../common/propsCollection';
+import { AutoCompleteProps } from '../../../../common/propsCollection';
+
+const { dataSource, onSearch, onSelect, placeholder } = AutoCompleteProps;
 
 class Basic extends Component {
   state = {
@@ -41,6 +38,7 @@ export default injectInfoWithSourceCode(
   Basic,
   { dataSource, onSearch, onSelect, placeholder },
   () => `import { AutoComplete } from 'antd';
+import 'antd/lib/auto-complete/style';
 
   class Basic extends Component {
 	state = {

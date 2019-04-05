@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Checkbox, Row, Col } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { value } from '../../../../common/propsCollection';
+import { CheckBoxProps } from '../../../../common/propsCollection';
+
+const { value } = CheckBoxProps;
 
 class Grid extends Component {
   state = {};

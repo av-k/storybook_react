@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { defaultChecked, disabled } from '../../../../common/propsCollection';
+import { CheckBoxProps } from '../../../../common/propsCollection';
+
+const { defaultChecked, disabled } = CheckBoxProps;
 
 class Disabled extends Component {
   render() {

@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { AutoComplete, Input } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
-  onKeyPress,
-  onSelect,
-  onSearch,
-  placeholder,
-} from '../../../../common/propsCollection';
+import { AutoCompleteProps } from '../../../../common/propsCollection';
+
+const { onKeyPress, onSelect, onSearch, placeholder } = AutoCompleteProps;
 
 class Textarea extends Component {
   state = {

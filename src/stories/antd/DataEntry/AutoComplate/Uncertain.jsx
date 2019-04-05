@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Icon, Button, Input, AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
+import { AutoCompleteProps } from '../../../../common/propsCollection';
+
+const {
   size,
   onSelect,
   onSearch,
   placeholder,
   optionLabelProp,
-} from '../../../../common/propsCollection';
+} = AutoCompleteProps;
 
 const Option = AutoComplete.Option;
 

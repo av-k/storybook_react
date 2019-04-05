@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Checkbox, Button } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import {
-  checked,
-  disabled,
-  onChange,
-} from '../../../../common/propsCollection';
+import { CheckBoxProps } from '../../../../common/propsCollection';
+
+const { checked, disabled, onChange } = CheckBoxProps;
 
 class Controll extends Component {
   state = {

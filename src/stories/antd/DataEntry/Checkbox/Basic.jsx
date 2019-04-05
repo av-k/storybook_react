@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { onChange } from '../../../../common/propsCollection';
+import { CheckBoxProps } from '../../../../common/propsCollection';
+
+const { onChange } = CheckBoxProps;
 
 class Basic extends Component {
   render() {

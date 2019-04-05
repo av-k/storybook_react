@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { onSearch, placeholder } from '../../../../common/propsCollection';
-
 import { AutoComplete } from 'antd';
+import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
+import { AutoCompleteProps } from '../../../../common/propsCollection';
+
+const { onSearch, placeholder } = AutoCompleteProps;
 
 class Custom extends Component {
   state = {

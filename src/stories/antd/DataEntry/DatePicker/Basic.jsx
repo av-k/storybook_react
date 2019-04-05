@@ -9,11 +9,14 @@ class Basic extends Component {
       <section className="example">
         <h3 className="ex-title">Basic</h3>
         <DatePicker />
-        <br/><br/>
+        <br />
+        <br />
         <MonthPicker placeholder="Select month" />
-        <br /><br />
+        <br />
+        <br />
         <RangePicker />
-        <br /><br />
+        <br />
+        <br />
         <WeekPicker placeholder="Select week" />
       </section>
     );

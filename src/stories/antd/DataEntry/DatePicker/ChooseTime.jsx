@@ -16,7 +16,8 @@ class ChooseTime extends Component {
           format={`${dateFormat} ${timeFormat}`}
           placeholder="Select Time"
         />
-        <br /><br/>
+        <br />
+        <br />
         <RangePicker
           showTime={{ format: timeFormat }}
           format={`${dateFormat} ${timeFormat}`}

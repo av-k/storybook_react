@@ -26,7 +26,7 @@ class Custom extends Component {
           onOpenChange={this.handleStartOpenChange}
         />
         <DatePicker
-          style={{marginLeft: '20px'}}
+          style={{ marginLeft: '20px' }}
           disabledDate={this.disabledEndDate}
           showTime
           format={`${dateFormat} ${timeFormat}`}
@@ -40,7 +40,7 @@ class Custom extends Component {
     );
   }
 
-  disabledStartDate = (startValue) => {
+  disabledStartDate = startValue => {
     const endValue = this.state.endValue;
     if (!startValue || !endValue) {
       return false;
@@ -48,7 +48,7 @@ class Custom extends Component {
     return startValue.valueOf() > endValue.valueOf();
   };
 
-  disabledEndDate = (endValue) => {
+  disabledEndDate = endValue => {
     const startValue = this.state.startValue;
     if (!endValue || !startValue) {
       return false;
@@ -62,21 +62,21 @@ class Custom extends Component {
     });
   };
 
-  onStartChange = (value) => {
+  onStartChange = value => {
     this.onChange('startValue', value);
   };
 
-  onEndChange = (value) => {
+  onEndChange = value => {
     this.onChange('endValue', value);
   };
 
-  handleStartOpenChange = (open) => {
+  handleStartOpenChange = open => {
     if (!open) {
       this.setState({ endOpen: true });
     }
   };
 
-  handleEndOpenChange = (open) => {
+  handleEndOpenChange = open => {
     this.setState({ endOpen: open });
   };
 }
