@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { action } from '@storybook/addon-actions';
 
 const { onSearch, placeholder } = AutoCompleteProps;
 
@@ -37,6 +38,7 @@ class Custom extends Component {
           style={{ width: 200 }}
           onSearch={this.handleSearch}
           placeholder="input here"
+          onSelect={action('Value Selected')}
         >
           {children}
         </AutoComplete>

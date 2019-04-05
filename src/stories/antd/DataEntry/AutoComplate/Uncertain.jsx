@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon, Button, Input, AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { action } from '@storybook/addon-actions';
 
 const {
   size,
@@ -71,10 +72,16 @@ class Uncertain extends Component {
             onSearch={this.handleSearch}
             placeholder="input here"
             optionLabelProp="text"
+            onSelect={action('Value Selected')}
           >
             <Input
               suffix={
-                <Button className="search-btn" size="large" type="primary">
+                <Button
+                  className="search-btn"
+                  size="large"
+                  type="primary"
+                  onClick={action('Search Button Clicked')}
+                >
                   <Icon type="search" />
                 </Button>
               }

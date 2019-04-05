@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AutoComplete, Input } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { action } from '@storybook/addon-actions';
 
 const { onKeyPress, onSelect, onSearch, placeholder } = AutoCompleteProps;
 
@@ -21,6 +22,7 @@ class Textarea extends Component {
           dataSource={dataSource}
           style={{ width: 200 }}
           onSearch={this.handleSearch}
+          onSelect={action('Value Selected')}
         >
           <TextArea
             placeholder="input here"

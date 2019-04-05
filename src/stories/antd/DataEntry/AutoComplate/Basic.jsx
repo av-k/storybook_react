@@ -3,6 +3,7 @@ import { AutoComplete } from 'antd';
 import 'antd/lib/auto-complete/style';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { action } from '@storybook/addon-actions';
 
 const { dataSource, onSearch, onSelect, placeholder } = AutoCompleteProps;
 
@@ -21,6 +22,7 @@ class Basic extends Component {
             style={{ width: 200 }}
             onSearch={this.handleSearch}
             placeholder="input here"
+            onSelect={action('Value Selected')}
           />
         </section>
       </>

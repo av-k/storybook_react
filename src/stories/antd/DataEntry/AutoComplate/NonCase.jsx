@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { action } from '@storybook/addon-actions';
 
 const { dataSource, filterOption, placeholder } = AutoCompleteProps;
 
@@ -21,6 +22,7 @@ class NonCase extends Component {
               .toUpperCase()
               .indexOf(inputValue.toUpperCase()) !== -1
           }
+          onSelect={action('Value Selected')}
         />
       </section>
     );

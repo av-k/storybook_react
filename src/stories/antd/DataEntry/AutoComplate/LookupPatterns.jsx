@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon, Input, AutoComplete } from 'antd';
 import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
 import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { action } from '@storybook/addon-actions';
 
 const {
   dropdownClassName,
@@ -95,6 +96,7 @@ class Pattern extends Component {
             dataSource={options}
             placeholder="input here"
             optionLabelProp="value"
+            onSelect={action('Value Selected')}
           >
             <Input
               suffix={<Icon type="search" className="certain-category-icon" />}
