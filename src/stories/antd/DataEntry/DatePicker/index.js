@@ -18,16 +18,14 @@ class DatePickerPage extends Component {
       <Fragment>
         <h1 className="title">DatePicker</h1>
 
-        <p className="text">
-          To select or input a date.
-        </p>
+        <p className="text">To select or input a date.</p>
 
         <h2 className="title">When To Use</h2>
 
         <p className="text">
-          By clicking the input box, you can select a date from a popup calendar.
+          By clicking the input box, you can select a date from a popup
+          calendar.
         </p>
-
 
         <h2 className="title">Examples:</h2>
 
@@ -42,7 +40,6 @@ class DatePickerPage extends Component {
         <Footer />
         <Panel />
         <CustomRender />
-
       </Fragment>
     );
   }
