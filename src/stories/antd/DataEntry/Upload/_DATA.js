@@ -15,6 +15,7 @@ export const CommonProps = [
     directory: {
       type: 'boolean',
       description: 'support upload whole directory',
+      defaultValue: 'false',
     },
 
     beforeUpload: {
@@ -43,6 +44,7 @@ export const CommonProps = [
     disabled: {
       type: 'boolean',
       description: 'disable upload button',
+      defaultValue: 'false',
     },
 
     fileList: {
@@ -60,17 +62,20 @@ export const CommonProps = [
       type: 'string',
       description:
         'Built-in stylesheets, support for three types: text, picture or picture-card',
+      defaultValue: 'text',
     },
 
     multiple: {
       type: 'boolean',
       description:
         'Whether to support selected multiple file. IE10+ supported. You can select multiple files with CTRL holding down while multiple is set to be true',
+      defaultValue: 'false',
     },
 
     name: {
       type: 'string',
       description: 'The name of uploading file',
+      defaultValue: "'file'",
     },
 
     showUploadList: {
@@ -78,21 +83,25 @@ export const CommonProps = [
         'Boolean or { showPreviewIcon?: boolean, showRemoveIcon?: boolean }',
       description:
         'Whether to show default upload list, could be an object to specify showPreviewIcon and showRemoveIcon individually',
+      defaultValue: 'true',
     },
 
     supportServerRender: {
       type: 'boolean',
       description: 'Need to be turned on while the server side is rendering',
+      defaultValue: 'false',
     },
 
     withCredentials: {
       type: 'boolean',
       description: 'ajax upload with cookie sent',
+      defaultValue: 'false',
     },
 
     openFileDialogOnClick: {
       type: 'boolean',
       description: 'click open file dialog',
+      defaultValue: 'true',
     },
 
     onChange: {

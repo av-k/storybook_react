@@ -4,22 +4,26 @@ export const SelectProps = [
     allowClear: {
       type: 'boolean',
       description: 'Show clear button.',
+      defaultValue: 'false',
     },
 
     autoClearSearchValue: {
       type: 'boolean',
       description:
         'Whether the current search will be cleared on selecting an item. Only applies when mode is set to multiple or tags.',
+      defaultValue: 'true',
     },
 
     autoFocus: {
       type: 'boolean',
       description: 'Get focus by default',
+      defaultValue: 'false',
     },
 
     defaultActiveFirstOption: {
       type: 'boolean',
       description: 'Whether active first option by default',
+      defaultValue: 'true',
     },
 
     defaultValue: {
@@ -30,6 +34,7 @@ export const SelectProps = [
     disabled: {
       type: 'boolean',
       description: 'Whether disabled select',
+      defaultValue: 'false',
     },
 
     dropdownClassName: {
@@ -40,6 +45,7 @@ export const SelectProps = [
     dropdownMatchSelectWidth: {
       type: 'boolean',
       description: "Whether dropdown's width is same with select.",
+      defaultValue: 'true',
     },
 
     dropdownRender: {
@@ -54,6 +60,7 @@ export const SelectProps = [
       type: 'boolean or function(inputValue, option)',
       description:
         'If true, filter options by input, if function, filter options against it. The function will receive two arguments, inputValue and option, if the function returns true, the option will be included in the filtered set; Otherwise, it will be excluded.',
+      defaultValue: 'true',
     },
 
     firstActiveValue: {
@@ -65,12 +72,14 @@ export const SelectProps = [
       type: 'function(triggerNode)	() => document.body',
       description:
         'Parent Node which the selector should be rendered to. Default to body. When position issues happen, try to modify it into scrollable content and position it relative.',
+      defaultValue: '() => document.body',
     },
 
     labelInValue: {
       type: 'boolean',
       description:
         'whether to embed label in value, turn the format of value from string to {key: string, label: ReactNode}',
+      defaultValue: 'false',
     },
     maxTagCount: {
       type: 'number',
@@ -85,21 +94,25 @@ export const SelectProps = [
     mode: {
       type: "'default' | 'multiple' | 'tags'",
       description: 'Set mode of Select',
+      defaultValue: "'default'",
     },
 
     notFoundContent: {
       type: 'string',
       description: 'Specify content to show when no result matches.',
+      defaultValue: "'Not found'",
     },
     optionFilterProp: {
       type: 'string',
       description:
         'Which prop value of option will be used for filter if filterOption is true',
+      defaultValue: 'value',
     },
     optionLabelProp: {
       type: 'string',
       description:
         'Which prop value of option will render as content of select.',
+      defaultValue: 'value for combobox, children for other modes',
     },
 
     placeholder: {
@@ -110,15 +123,18 @@ export const SelectProps = [
     showArrow: {
       type: 'boolean',
       description: 'Whether to show the drop-down arrow',
+      defaultValue: 'true',
     },
 
     showSearch: {
       type: 'boolean',
       description: 'Whether show search input in single mode.',
+      defaultValue: 'false',
     },
     size: {
       type: 'string',
       description: 'Size of Select input. default large small',
+      defaultValue: 'default',
     },
 
     suffixIcon: {
@@ -221,6 +237,7 @@ export const SelectProps = [
     loading: {
       type: 'boolean',
       description: 'indicate loading state',
+      defaultValue: 'false',
     },
   },
 ];
@@ -231,6 +248,7 @@ export const OptionProps = [
     disabled: {
       type: 'boolean',
       description: 'Disable this option',
+      defaultValue: 'false',
     },
 
     key: {

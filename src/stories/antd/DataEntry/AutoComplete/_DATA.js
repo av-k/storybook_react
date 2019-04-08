@@ -4,21 +4,25 @@ export const CommonProps = [
     allowClear: {
       type: 'boolean',
       description: 'Show clear button, effective in multiple mode only.',
+      defaultValue: 'false',
     },
 
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
 
     backfill: {
       type: 'boolean',
       description: 'backfill selected item the input when using keyboard',
+      defaultValue: 'false',
     },
 
     'children (for customize input element)': {
       type: 'HTMLInputElement / HTMLTextAreaElement / React.ReactElement',
       description: 'customize input element',
+      defaultValue: '<Input/>',
     },
 
     'children (for dataSource)': {
@@ -34,6 +38,7 @@ export const CommonProps = [
     defaultActiveFirstOption: {
       type: 'boolean',
       description: 'Whether active first option by default',
+      defaultValue: 'true',
     },
 
     defaultValue: {
@@ -44,18 +49,21 @@ export const CommonProps = [
     disabled: {
       type: 'boolean',
       description: 'Whether disabled select',
+      defaultValue: 'false',
     },
 
     filterOption: {
       type: 'boolean or function(inputValue, option)	',
       description:
         'If true, filter options by input, if function, filter options against it. The function will receive two arguments, inputValue and option, if the function returns true, the option will be included in the filtered set; Otherwise, it will be excluded.',
+      defaultValue: 'true',
     },
 
     optionLabelProp: {
       type: 'string',
       description:
         'Which prop value of option will render as content of select.',
+      defaultValue: 'children',
     },
 
     placeholder: {

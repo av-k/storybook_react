@@ -32,7 +32,12 @@ const PropsModal = ({ dataProps, propsModal, toggle }) => {
                 <Tooltip title={propData.description} placement="left">
                   <span className="prop-name">{propName}</span>
                 </Tooltip>
-                <span className="prop-type">{propData.type}</span>
+                <Tooltip
+                  title={`Default value: ${propData.defaultValue || '-'}`}
+                  placement="right"
+                >
+                  <span className="prop-type">{propData.type}</span>
+                </Tooltip>
               </List.Item>
             )}
           />

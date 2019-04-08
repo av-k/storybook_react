@@ -4,6 +4,7 @@ export const RadioProps = [
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
     checked: {
       type: 'boolean',
@@ -13,10 +14,12 @@ export const RadioProps = [
       type: 'boolean',
       description:
         'Specifies the initial state: whether or not the radio is selected.',
+      defaultValue: 'false',
     },
     disabled: {
       type: 'boolean',
       description: 'Disable radio',
+      defaultValue: 'false',
     },
     value: {
       type: 'any',
@@ -36,6 +39,7 @@ export const RadioGroupProps = [
     disabled: {
       type: 'boolean',
       description: 'Disable all radio buttons',
+      defaultValue: 'false',
     },
     name: {
       type: 'string',
@@ -49,6 +53,7 @@ export const RadioGroupProps = [
     size: {
       type: 'large | default | small',
       description: 'size for radio button style',
+      defaultValue: 'default',
     },
     value: {
       type: 'any',
@@ -62,6 +67,7 @@ export const RadioGroupProps = [
     buttonStyle: {
       type: 'outline | solid	',
       description: 'style type of radio button',
+      defaultValue: 'outline',
     },
   },
 ];

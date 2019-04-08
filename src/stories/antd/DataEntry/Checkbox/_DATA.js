@@ -4,27 +4,32 @@ export const CheckBoxProps = [
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
 
     checked: {
       type: 'boolean',
       description: 'Specifies whether the checkbox is selected.',
+      defaultValue: 'false',
     },
 
     defaultChecked: {
       type: 'boolean',
       description:
         'Specifies the initial state: whether or not the checkbox is selected.',
+      defaultValue: 'false',
     },
 
     disabled: {
       type: 'boolean',
       description: 'Disable checkbox',
+      defaultValue: 'false',
     },
 
     indeterminate: {
       type: 'boolean',
       description: 'indeterminate checked state of checkbox',
+      defaultValue: 'false',
     },
 
     onChange: {
@@ -41,10 +46,12 @@ export const CheckBoxGroupProps = [
     defaultValue: {
       type: 'string[]',
       description: 'Default selected value',
+      defaultValue: '[]',
     },
     disabled: {
       type: 'boolean',
       description: 'Disable all checkboxes',
+      defaultValue: 'false',
     },
     name: {
       type: 'string',
@@ -53,10 +60,12 @@ export const CheckBoxGroupProps = [
     options: {
       type: 'string[]',
       description: 'Specifies options',
+      defaultValue: '[]',
     },
     value: {
       type: 'string[]',
       description: 'Used for setting the currently selected value.',
+      defaultValue: '[]',
     },
     onChange: {
       type: 'Function(checkedValue)',

@@ -4,11 +4,13 @@ export const CommonProps = [
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
 
     checked: {
       type: 'boolean',
       description: 'determine whether the Switch is checked',
+      defaultValue: 'false',
     },
 
     checkedChildren: {
@@ -19,21 +21,25 @@ export const CommonProps = [
     defaultChecked: {
       type: 'boolean',
       description: '	to set the initial state',
+      defaultValue: 'false',
     },
 
     disabled: {
       type: 'boolean',
       description: 'Disable switch',
+      defaultValue: 'false',
     },
 
     loading: {
       type: 'boolean',
       description: 'loading state of switch',
+      defaultValue: 'false',
     },
 
     size: {
       type: 'string',
       description: 'the size of the Switch, options: default small',
+      defaultValue: 'default',
     },
 
     unCheckedChildren: {

@@ -4,14 +4,17 @@ export const CommonProps = [
     allowClear: {
       type: 'boolean',
       description: 'Whether to show clear button',
+      defaultValue: 'true',
     },
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
     className: {
       type: 'string',
       description: 'picker className',
+      defaultValue: "' '",
     },
     dateRender: {
       type: 'function(currentDate: moment, today: moment) => React.ReactNode',
@@ -20,6 +23,7 @@ export const CommonProps = [
     disabled: {
       type: 'boolean',
       description: 'determine whether the DatePicker is disabled',
+      defaultValue: 'false',
     },
     disabledDate: {
       type: '(currentDate: moment) => boolean',
@@ -37,10 +41,12 @@ export const CommonProps = [
     locale: {
       type: 'object',
       description: 'localization configuration',
+      defaultValue: 'default',
     },
     mode: {
       type: 'time|date|month|year',
       description: 'picker panel mode',
+      defaultValue: 'date',
     },
     open: {
       type: 'boolean',
@@ -53,6 +59,7 @@ export const CommonProps = [
     popupStyle: {
       type: 'object',
       description: 'to customize the style of the popup calendar',
+      defaultValue: '{}',
     },
     size: {
       type: 'string',
@@ -66,6 +73,7 @@ export const CommonProps = [
     style: {
       type: 'object',
       description: 'to customize the style of the input box',
+      defaultValue: '{}',
     },
     onOpenChange: {
       type: 'function(status)',
@@ -99,6 +107,7 @@ export const DatePickerProps = [
       type: 'string | string[]',
       description:
         'to set the date format, refer to moment.js. When an array is provided, all values are used for parsing and first value is used for formatting.',
+      defaultValue: "'YYYY-MM-DD'",
     },
     renderExtraFooter: {
       type: '(mode) => React.ReactNode',
@@ -107,14 +116,17 @@ export const DatePickerProps = [
     showTime: {
       type: 'object|boolean',
       description: 'to provide an additional time selection',
+      defaultValue: 'TimePicker Options',
     },
     showTimedefaultValue: {
       type: 'moment',
       description: 'to set default time of selected date',
+      defaultValue: 'moment()',
     },
     showToday: {
       type: 'boolean',
       description: 'whether to show "Today" button',
+      defaultValue: 'true',
     },
     value: {
       type: 'moment',
@@ -146,6 +158,7 @@ export const MonthPickerProps = [
     format: {
       type: 'string',
       description: 'to set the date format, refer to moment.js',
+      defaultValue: "'YYYY-MM'",
     },
     monthCellContentRender: {
       type: 'function(date, locale): ReactNode',
@@ -181,6 +194,7 @@ export const WeekPickerProps = [
     format: {
       type: 'string',
       description: 'to set the date format, refer to moment.js',
+      defaultValue: "'YYYY-wo'",
     },
     value: {
       type: 'moment',
@@ -217,6 +231,7 @@ export const RangePickerProps = [
       type: 'string | string[]',
       description:
         'to set the date format, refer to moment.js. When an array is provided, all values are used for parsing and first value is used for formatting.',
+      defaultValue: "'YYYY-MM-DD HH:mm:ss'",
     },
     ranges: {
       type:
@@ -230,14 +245,17 @@ export const RangePickerProps = [
     separator: {
       type: 'string',
       description: 'set separator between inputs',
+      defaultValue: "'~'",
     },
     showTime: {
       type: 'object|boolean',
       description: 'to provide an additional time selection',
+      defaultValue: 'TimePicker Options',
     },
     showTimedefaultValue: {
       type: 'moment[]',
       description: 'to set default time of selected date',
+      defaultValue: '[moment(), moment()]',
     },
     value: {
       type: '[moment, moment]',

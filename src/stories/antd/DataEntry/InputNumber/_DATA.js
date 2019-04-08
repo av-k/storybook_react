@@ -4,6 +4,7 @@ export const CommonProps = [
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
 
     defaultValue: {
@@ -14,6 +15,7 @@ export const CommonProps = [
     disabled: {
       type: 'boolean',
       description: 'disable the input',
+      defaultValue: 'false',
     },
 
     formatter: {
@@ -24,11 +26,13 @@ export const CommonProps = [
     max: {
       type: 'number',
       description: 'max value',
+      defaultValue: 'Infinity',
     },
 
     min: {
       type: 'number',
       description: 'min value',
+      defaultValue: '-Infinity',
     },
 
     parser: {
@@ -55,6 +59,7 @@ export const CommonProps = [
       type: 'number|string',
       description:
         'The number to which the current value is increased or decreased. It can be an integer or decimal.',
+      defaultValue: '1',
     },
 
     value: {

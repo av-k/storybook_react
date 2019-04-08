@@ -4,21 +4,25 @@ export const CommonProps = [
     allowClear: {
       type: 'boolean',
       description: 'whether to allow clear when click again',
+      defaultValue: 'true',
     },
 
     allowHalf: {
       type: 'boolean',
       description: 'whether to allow semi selection',
+      defaultValue: 'false',
     },
 
     autoFocus: {
       type: 'boolean',
       description: 'get focus when component mounted',
+      defaultValue: 'false',
     },
 
     character: {
       type: 'ReactNode < Icon type = "star" />',
       description: 'custom character of rate',
+      defaultValue: '<Icon type="star"/>',
     },
 
     className: {
@@ -29,16 +33,19 @@ export const CommonProps = [
     count: {
       type: 'number',
       description: 'star count',
+      defaultValue: '5',
     },
 
     defaultValue: {
       type: 'number',
       description: 'default value',
+      defaultValue: '0',
     },
 
     disabled: {
       type: 'boolean',
       description: 'read only, unable to interact',
+      defaultValue: 'false',
     },
 
     style: {

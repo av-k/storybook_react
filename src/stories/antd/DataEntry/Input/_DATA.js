@@ -18,6 +18,7 @@ export const InputProps = [
     disabled: {
       type: 'boolean',
       description: 'Whether the input is disabled.',
+      defaultValue: 'false',
     },
     id: {
       type: 'string',
@@ -31,6 +32,7 @@ export const InputProps = [
       type: 'string',
       description:
         'The size of the input box. Note: in the context of a form, the large size is used. Available: large default small',
+      defaultValue: 'default',
     },
     suffix: {
       type: 'string|ReactNode',
@@ -40,6 +42,7 @@ export const InputProps = [
       type: 'string',
       description:
         'The type of input, see: MDN(use Input.TextArea instead of type="textarea")',
+      defaultValue: 'text',
     },
     value: {
       type: 'string',
@@ -68,6 +71,7 @@ export const InputTextAreaProps = [
       type: 'boolean|object',
       description:
         'Height autosize feature, can be set to true|false or an object { minRows: 2, maxRows: 6 }',
+      defaultValue: 'false',
     },
     defaultValue: {
       type: 'string',
@@ -92,6 +96,7 @@ export const InputSearchProps = [
       type: 'boolean|ReactNode',
       description:
         'to show an enter button after input. This prop is conflict with addon.',
+      defaultValue: 'false',
     },
     onSearch: {
       type: 'function(value, event)',
@@ -107,11 +112,13 @@ export const InputGroupProps = [
     compact: {
       type: 'boolean',
       description: 'Whether use compact style',
+      defaultValue: 'false',
     },
     size: {
       type: 'string',
       description:
         'The size of Input.Group specifies the size of the included Input fields. Available: large, default, small',
+      defaultValue: 'default',
     },
   },
 ];
@@ -122,6 +129,7 @@ export const InputPasswordProps = [
     visibilityToggle: {
       type: 'boolean',
       description: 'Whether show toggle button',
+      defaultValue: 'true',
     },
   },
 ];
