@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, Modal, Icon } from 'antd';
+import { Tooltip, Modal, Icon, List } from 'antd';
 
 const PropsModal = ({ dataProps, propsModal, toggle }) => {
   return (
@@ -23,17 +23,20 @@ const PropsModal = ({ dataProps, propsModal, toggle }) => {
               <Icon type="ant-design" />
             </a>
           </h4>
-
-          <ul>
-            {Object.entries(props).map(([propName, propData]) => (
-              <li key={propName}>
+          <List
+            size="small"
+            bordered
+            dataSource={Object.entries(props).map(item => item)}
+            renderItem={([propName, propData]) => (
+              <List.Item key={propName} className="prop-item">
                 <Tooltip title={propData.description} placement="left">
-                  <span className="prop-name">{propName}</span> :{' '}
+                  <span className="prop-name">{propName}</span>
                 </Tooltip>
                 <span className="prop-type">{propData.type}</span>
-              </li>
-            ))}
-          </ul>
+              </List.Item>
+            )}
+          />
+          <br />
         </React.Fragment>
       ))}
     </Modal>

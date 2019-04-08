@@ -7,12 +7,12 @@ import NonCase from './NonCase';
 import Pattern from './LookupPatterns';
 import Uncertian from './Uncertain';
 
-class AutoComplatePage extends Component {
+class AutoCompletePage extends Component {
   state = {};
   render() {
     return (
       <Fragment>
-        <h1 className="title">AutoComplate</h1>
+        <h1 className="title">AutoComplete</h1>
         <p className="text">Autocomplete function of input field.</p>
 
         <h2 className="title">When To Use</h2>
@@ -33,4 +33,4 @@ class AutoComplatePage extends Component {
   }
 }
 
-export default AutoComplatePage;
+export default AutoCompletePage;
