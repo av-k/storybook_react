@@ -2,25 +2,33 @@ import React, { Component } from 'react';
 import { Switch, Icon } from 'antd';
 import 'antd/lib/switch/style';
 import 'antd/lib/icon/style';
-import { withOptions } from '../../../../common/withOptions'
-import * as AllProps from './_DATA'
+import { withOptions } from '../../../../common/withOptions';
+import * as AllProps from './_DATA';
 
 class IconSwitch extends Component {
-	render() {
-		return (
-			<section className="example">
-				<h3 className="ex-title">Text & icon</h3>
-				<div>
-					<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
-					<Switch className="ml20" checkedChildren="1" unCheckedChildren="0" />
-					<Switch className="ml20" checkedChildren={<Icon type="check" />} unCheckedChildren={<Icon type="cross" />} defaultChecked />
-				</div>
-			</section>
-		);
-	}
+  render() {
+    return (
+      <section className="example">
+        <h3 className="ex-title">Text & icon</h3>
+        <div>
+          <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
+          <Switch className="ml20" checkedChildren="1" unCheckedChildren="0" />
+          <Switch
+            className="ml20"
+            checkedChildren={<Icon type="check" />}
+            unCheckedChildren={<Icon type="cross" />}
+            defaultChecked
+          />
+        </div>
+      </section>
+    );
+  }
 }
 
-export default withOptions(IconSwitch, AllProps, `import React, { Component } from 'react';
+export default withOptions(
+  IconSwitch,
+  AllProps,
+  `import React, { Component } from 'react';
 import { Switch, Icon } from 'antd';
 import 'antd/lib/switch/style';
 import 'antd/lib/icon/style';
@@ -38,4 +46,5 @@ class IconSwitch extends Component {
       </section>
     );
   }
-}`);
+}`,
+);

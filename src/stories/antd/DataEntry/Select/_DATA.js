@@ -1,220 +1,272 @@
-export const SelectProps = {
-	allowClear: {
-		type: 'boolean',
-		description: 'Show clear button.'
-	},
+export const SelectProps = [
+  'https://ant.design/components/select/#Select-props',
+  {
+    allowClear: {
+      type: 'boolean',
+      description: 'Show clear button.',
+    },
 
-	autoClearSearchValue: {
-		type: 'boolean',
-		description: 'Whether the current search will be cleared on selecting an item. Only applies when mode is set to multiple or tags.'
-	},
+    autoClearSearchValue: {
+      type: 'boolean',
+      description:
+        'Whether the current search will be cleared on selecting an item. Only applies when mode is set to multiple or tags.',
+    },
 
-	autoFocus: {
-		type: 'boolean',
-		description: 'Get focus by default'
-	},
+    autoFocus: {
+      type: 'boolean',
+      description: 'Get focus by default',
+    },
 
-	defaultActiveFirstOption: {
-		type: 'boolean',
-		description: 'Whether active first option by default'
-	},
+    defaultActiveFirstOption: {
+      type: 'boolean',
+      description: 'Whether active first option by default',
+    },
 
-	defaultValue: {
-		type: 'string|string[]',
-		description: 'Initial selected option.'
-	},
+    defaultValue: {
+      type: 'string|string[]',
+      description: 'Initial selected option.',
+    },
 
-	disabled: {
-		type: 'boolean',
-		description: 'Whether disabled select'
-	},
+    disabled: {
+      type: 'boolean',
+      description: 'Whether disabled select',
+    },
 
-	dropdownClassName: {
-		type: 'string',
-		description: 'className of dropdown menu'
-	},
+    dropdownClassName: {
+      type: 'string',
+      description: 'className of dropdown menu',
+    },
 
-	dropdownMatchSelectWidth: {
-		type: 'boolean',
-		description: 'Whether dropdown\'s width is same with select.'
-	},
+    dropdownMatchSelectWidth: {
+      type: 'boolean',
+      description: "Whether dropdown's width is same with select.",
+    },
 
-	dropdownRender: {
-		type: '	(menuNode: ReactNode, props) => ReactNode',
-		description: 'Customize dropdown content'
-	},
-	dropdownStyle: {
-		type: 'object',
-		description: 'style of dropdown menu'
-	},
-	filterOption: {
-		type: 'boolean or function(inputValue, option)',
-		description: 'If true, filter options by input, if function, filter options against it. The function will receive two arguments, inputValue and option, if the function returns true, the option will be included in the filtered set; Otherwise, it will be excluded.'
-	},
+    dropdownRender: {
+      type: '	(menuNode: ReactNode, props) => ReactNode',
+      description: 'Customize dropdown content',
+    },
+    dropdownStyle: {
+      type: 'object',
+      description: 'style of dropdown menu',
+    },
+    filterOption: {
+      type: 'boolean or function(inputValue, option)',
+      description:
+        'If true, filter options by input, if function, filter options against it. The function will receive two arguments, inputValue and option, if the function returns true, the option will be included in the filtered set; Otherwise, it will be excluded.',
+    },
 
-	firstActiveValue: {
-		type: 'string|string[]',
-		description: 'Value of action option by default'
-	},
+    firstActiveValue: {
+      type: 'string|string[]',
+      description: 'Value of action option by default',
+    },
 
-	getPopupContainer: {
-		type: 'function(triggerNode)	() => document.body',
-		description: 'Parent Node which the selector should be rendered to. Default to body. When position issues happen, try to modify it into scrollable content and position it relative.'
-	},
+    getPopupContainer: {
+      type: 'function(triggerNode)	() => document.body',
+      description:
+        'Parent Node which the selector should be rendered to. Default to body. When position issues happen, try to modify it into scrollable content and position it relative.',
+    },
 
-	labelInValue: {
-		type: 'boolean',
-		description: 'whether to embed label in value, turn the format of value from string to {key: string, label: ReactNode}'
-	},
-	maxTagCount: {
-		type: 'number',
-		description: 'Max tag count to show'
-	},
+    labelInValue: {
+      type: 'boolean',
+      description:
+        'whether to embed label in value, turn the format of value from string to {key: string, label: ReactNode}',
+    },
+    maxTagCount: {
+      type: 'number',
+      description: 'Max tag count to show',
+    },
 
-	maxTagPlaceholder: {
-		type: 'ReactNode/function(omittedValues)',
-		description: 'Placeholder for not showing tags'
-	},
+    maxTagPlaceholder: {
+      type: 'ReactNode/function(omittedValues)',
+      description: 'Placeholder for not showing tags',
+    },
 
+    mode: {
+      type: "'default' | 'multiple' | 'tags'",
+      description: 'Set mode of Select',
+    },
 
+    notFoundContent: {
+      type: 'string',
+      description: 'Specify content to show when no result matches.',
+    },
+    optionFilterProp: {
+      type: 'string',
+      description:
+        'Which prop value of option will be used for filter if filterOption is true',
+    },
+    optionLabelProp: {
+      type: 'string',
+      description:
+        'Which prop value of option will render as content of select.',
+    },
 
+    placeholder: {
+      type: 'string|ReactNode',
+      description: 'Placeholder of select',
+    },
 
-	mode: {
-		type: '\'default\' | \'multiple\' | \'tags\'',
-		description: 'Set mode of Select',
-	},
+    showArrow: {
+      type: 'boolean',
+      description: 'Whether to show the drop-down arrow',
+    },
 
-	notFoundContent: {
-		type: 'string',
-		description: 'Specify content to show when no result matches.',
-	},
-	optionFilterProp: {
-		type: 'string',
-		description: 'Which prop value of option will be used for filter if filterOption is true',
-	},
-	optionLabelProp: {
-		type: 'string',
-		description: 'Which prop value of option will render as content of select.',
-	},
+    showSearch: {
+      type: 'boolean',
+      description: 'Whether show search input in single mode.',
+    },
+    size: {
+      type: 'string',
+      description: 'Size of Select input. default large small',
+    },
 
-	placeholder: {
-		type: 'string|ReactNode',
-		description: 'Placeholder of select',
-	},
+    suffixIcon: {
+      type: 'ReactNode',
+      description: 'The custom suffix icon',
+    },
 
-	showArrow: {
-		type: 'boolean',
-		description: 'Whether to show the drop-down arrow',
-	},
+    removeIcon: {
+      type: 'ReactNode',
+      description: 'The custom remove icon',
+    },
 
-	showSearch: {
-		type: 'boolean',
-		description: 'Whether show search input in single mode.',
-	},
-	size: {
-		type: 'string',
-		description: 'Size of Select input. default large small',
-	},
+    clearIcon: {
+      type: 'ReactNode',
+      description: 'The custom clear icon',
+    },
 
-	suffixIcon: {
-		type: 'ReactNode',
-		description: 'The custom suffix icon',
-	},
+    menuItemSelectedIcon: {
+      type: 'ReactNode',
+      description: 'The custom menuItemSelected icon',
+    },
 
-	removeIcon: {
-		type: 'ReactNode',
-		description: 'The custom remove icon',
-	},
+    tokenSeparators: {
+      type: 'string[]',
+      description: 'Separator used to tokenize on tag/multiple mode',
+    },
 
-	clearIcon: {
-		type: 'ReactNode',
-		description: 'The custom clear icon',
-	},
+    value: {
+      type: 'string|number|string[]|number[]',
+      description: 'Current selected option.',
+    },
 
-	menuItemSelectedIcon: {
-		type: 'ReactNode',
-		description: 'The custom menuItemSelected icon',
-	},
+    onBlur: {
+      type: 'function',
+      description: 'Called when blur',
+    },
 
-	tokenSeparators: {
-		type: 'string[]',
-		description: 'Separator used to tokenize on tag/multiple mode',
-	},
+    onChange: {
+      type: 'function(value, option:Option/Array<Option>)',
+      description:
+        'Called when select an option or input value change, or value of input is changed in combobox mode',
+    },
 
-	value: {
-		type: 'string|number|string[]|number[]',
-		description: 'Current selected option.',
-	},
+    onDeselect: {
+      type: '	function(value, option:Option)',
+      description:
+        "Called when a option is deselected, the params are option's value (or key) . only called for multiple or tags, effective in multiple or tags mode only.",
+    },
 
-	onBlur: {
-		type: 'function',
-		description: 'Called when blur',
-	},
+    onFocus: {
+      type: 'function',
+      description: 'Called when focus',
+    },
 
-	onChange: {
-		type: 'function(value, option:Option/Array<Option>)',
-		description: 'Called when select an option or input value change, or value of input is changed in combobox mode',
-	},
+    onInputKeyDown: {
+      type: 'function',
+      description: 'Called when key pressed',
+    },
+    onMouseEnter: {
+      type: 'function',
+      description: 'Called when mouse enter',
+    },
 
+    onMouseLeave: {
+      type: 'function',
+      description: 'Called when mouse leave',
+    },
 
+    onPopupScroll: {
+      type: 'function',
+      description: 'Called when dropdown scrolls',
+    },
 
-	onDeselect: {
-		type: '	function(value, option:Option)',
-		description: 'Called when a option is deselected, the params are option\'s value (or key) . only called for multiple or tags, effective in multiple or tags mode only.',
-	},
+    onSearch: {
+      type: 'function(value: string)	',
+      description: 'Callback function that is fired when input changed.',
+    },
 
-	onFocus: {
-		type: 'function',
-		description: 'Called when focus',
-	},
+    onSelect: {
+      type: 'function(value, option:Option)',
+      description:
+        "Called when a option is selected, the params are option's value (or key) and option instance.",
+    },
 
-	onInputKeyDown: {
-		type: 'function',
-		description: 'Called when key pressed',
-	},
-	onMouseEnter: {
-		type: 'function',
-		description: 'Called when mouse enter',
-	},
+    defaultOpen: {
+      type: 'boolean',
+      description: 'Initial open state of dropdown',
+    },
 
-	onMouseLeave: {
-		type: 'function',
-		description: 'Called when mouse leave',
-	},
+    open: {
+      type: 'boolean',
+      description: 'Controlled open state of dropdown',
+    },
 
-	onPopupScroll: {
-		type: 'function',
-		description: 'Called when dropdown scrolls',
-	},
+    onDropdownVisibleChange: {
+      type: 'function(open)',
+      description: 'Call when dropdown open',
+    },
 
-	onSearch: {
-		type: 'function(value: string)	',
-		description: 'Callback function that is fired when input changed.',
-	},
+    loading: {
+      type: 'boolean',
+      description: 'indicate loading state',
+    },
+  },
+];
 
-	onSelect: {
-		type: 'function(value, option:Option)',
-		description: 'Called when a option is selected, the params are option\'s value (or key) and option instance.',
-	},
+export const OptionProps = [
+  'https://ant.design/components/select/#Option-props',
+  {
+    disabled: {
+      type: 'boolean',
+      description: 'Disable this option',
+    },
 
-	defaultOpen: {
-		type: 'boolean',
-		description: 'Initial open state of dropdown',
-	},
+    key: {
+      type: 'string',
+      description:
+        'Same usage as value. If React request you to set this property, you can set it to value of option, and then omit value property.',
+    },
 
-	open: {
-		type: 'boolean',
-		description: 'Controlled open state of dropdown',
-	},
+    title: {
+      type: 'string',
+      description: 'title of Select after select this Option',
+    },
 
-	onDropdownVisibleChange: {
-		type: 'function(open)',
-		description: 'Call when dropdown open',
-	},
+    value: {
+      type: 'string|number',
+      description: 'default to filter with this property',
+    },
 
-	loading: {
-		type: 'boolean',
-		description: 'indicate loading state',
-	},
+    className: {
+      type: 'string',
+      description: 'additional class to option',
+    },
+  },
+];
 
-}
+export const OptionGroupProps = [
+  'https://ant.design/components/select/#OptGroup-props',
+  {
+    key: {
+      type: 'string',
+      description: 'key',
+    },
+
+    label: {
+      type: 'string|React.Element',
+      description: 'Group label',
+    },
+  },
+];
