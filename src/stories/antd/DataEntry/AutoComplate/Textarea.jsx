@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { AutoComplete, Input } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { withOptions } from '../../../../common/withOptions';
+import { CommonProps } from './_DATA';
 import { action } from '@storybook/addon-actions';
-
-const { onKeyPress, onSelect, onSearch, placeholder } = AutoCompleteProps;
 
 class Textarea extends Component {
   state = {
@@ -41,15 +39,11 @@ class Textarea extends Component {
     });
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Textarea,
-  {
-    onKeyPress,
-    onSelect,
-    onSearch,
-    placeholder,
-  },
-  () => `import { AutoComplete, Input } from 'antd';
+  { CommonProps },
+  `import React, { Component } from 'react';
+import { AutoComplete, Input } from 'antd';
 
 class Textarea extends Component {
   state = {

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Checkbox, Button } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { CheckBoxProps } from '../../../../common/propsCollection';
-
-const { checked, disabled, onChange } = CheckBoxProps;
+import { withOptions } from '../../../../common/withOptions';
+import { CheckBoxProps } from './_DATA';
 
 class Controll extends Component {
   state = {
@@ -53,10 +51,11 @@ class Controll extends Component {
   onChange = e => this.setState({ checked: e.target.checked });
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Controll,
-  { checked, disabled, onChange },
-  () => `import { Checkbox, Button } from 'antd';
+  { CheckBoxProps },
+  `import React, { Component } from 'react';
+import { Checkbox, Button } from 'antd';
 
 class Controll extends Component {
   state = {

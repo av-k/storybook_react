@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { withOptions } from '../../../../common/withOptions';
+import { CommonProps } from './_DATA';
 import { action } from '@storybook/addon-actions';
-
-const { dataSource, filterOption, placeholder } = AutoCompleteProps;
 
 class NonCase extends Component {
   render() {
@@ -29,10 +27,11 @@ class NonCase extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   NonCase,
-  { dataSource, filterOption, placeholder },
-  () => `import { AutoComplete } from 'antd';
+  { CommonProps },
+  `import React, { Component } from 'react';
+import { AutoComplete } from 'antd';
 
 class NonCase extends Component {
   render() {

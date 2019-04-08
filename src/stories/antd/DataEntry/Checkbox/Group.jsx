@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
+import { withOptions } from '../../../../common/withOptions';
 import { Checkbox } from 'antd';
-import { CheckBoxProps } from '../../../../common/propsCollection';
-
-const { options, disabled, defaultValue } = CheckBoxProps;
+import { CheckBoxProps, CheckBoxGroupProps } from './_DATA';
 
 class Group extends Component {
   render() {
@@ -43,10 +41,11 @@ class Group extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Group,
-  { options, disabled, defaultValue },
-  () => `import { Checkbox } from 'antd';
+  { CheckBoxProps, CheckBoxGroupProps },
+  `import React, { Component } from 'react';
+import { Checkbox } from 'antd';
 
 class Group extends Component {
   render() {

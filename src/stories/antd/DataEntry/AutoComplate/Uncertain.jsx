@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { Icon, Button, Input, AutoComplete } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { withOptions } from '../../../../common/withOptions';
+import { CommonProps } from './_DATA';
 import { action } from '@storybook/addon-actions';
-
-const {
-  size,
-  onSelect,
-  onSearch,
-  placeholder,
-  optionLabelProp,
-} = AutoCompleteProps;
 
 const Option = AutoComplete.Option;
 
@@ -93,16 +85,11 @@ class Uncertain extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Uncertain,
-  {
-    size,
-    onSelect,
-    onSearch,
-    placeholder,
-    optionLabelProp,
-  },
-  () => `import { Icon, Button, Input, AutoComplete } from 'antd';
+  { CommonProps },
+  `import React, { Component } from 'react';
+import { Icon, Button, Input, AutoComplete } from 'antd';
 
 const Option = AutoComplete.Option;
 
@@ -116,7 +103,7 @@ function searchResult(query) {
     .split('.')
     .map((item, idx) => ({
       query,
-      category: $'{query}'$'{idx}',
+      category: \`\${query}\${idx}\`,
       count: getRandomInt(200, 100),
     }));
 }
@@ -126,7 +113,7 @@ function renderOption(item) {
     <Option key={item.category} text={item.category}>
       {item.query} 在
       <a
-        href={https://s.taobao.com/search?q=$'{item.query}'}
+        href={https://s.taobao.com/search?q=\`\${item.query}\`}
         target="_blank"
         rel="noopener noreferrer"
       >

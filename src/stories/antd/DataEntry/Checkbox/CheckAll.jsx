@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { CheckBoxProps } from '../../../../common/propsCollection';
-
-const { indeterminate, onChange, checked, options } = CheckBoxProps;
+import { withOptions } from '../../../../common/withOptions';
+import { CheckBoxProps, CheckBoxGroupProps } from './_DATA';
 
 const defaultCheckedList = ['Apple', 'Orange'];
 const CheckboxGroup = Checkbox.Group;
@@ -56,15 +54,14 @@ class CheckAll extends Component {
     });
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   CheckAll,
   {
-    indeterminate,
-    onChange,
-    checked,
-    options,
+    CheckBoxProps,
+    CheckBoxGroupProps,
   },
-  () => `import { Checkbox } from 'antd';
+  `import React, { Component } from 'react';
+import { Checkbox } from 'antd';
 
 const defaultCheckedList = ['Apple', 'Orange'];
 const CheckboxGroup = Checkbox.Group;

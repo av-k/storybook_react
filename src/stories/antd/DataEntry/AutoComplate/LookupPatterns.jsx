@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import { Icon, Input, AutoComplete } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { withOptions } from '../../../../common/withOptions';
+import { CommonProps } from './_DATA';
 import { action } from '@storybook/addon-actions';
-
-const {
-  dropdownClassName,
-  dropdownMatchSelectWidth,
-  dropdownStyle,
-  size,
-  dataSource,
-  placeholder,
-  optionLabelProp,
-} = AutoCompleteProps;
 
 class Pattern extends Component {
   state = {};
@@ -124,18 +114,11 @@ class Pattern extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Pattern,
-  {
-    dropdownClassName,
-    dropdownMatchSelectWidth,
-    dropdownStyle,
-    size,
-    dataSource,
-    placeholder,
-    optionLabelProp,
-  },
-  () => `import { Icon, Input, AutoComplete } from 'antd';
+  { CommonProps },
+  `import React, { Component } from 'react';
+import { Icon, Input, AutoComplete } from 'antd';
 
 class Pattern extends Component {
   state = {};

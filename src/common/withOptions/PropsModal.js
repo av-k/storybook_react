@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, Modal } from 'antd';
 
-export default ({ availableProps, propsModal, toggle }) => {
+const PropsModal = ({ availableProps, propsModal, toggle }) => {
   return (
     <Modal
       visible={propsModal}
@@ -33,3 +33,4 @@ export default ({ availableProps, propsModal, toggle }) => {
     </Modal>
   );
 };
+export default PropsModal;

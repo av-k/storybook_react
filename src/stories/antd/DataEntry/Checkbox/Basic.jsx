@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { CheckBoxProps } from '../../../../common/propsCollection';
-
-const { onChange } = CheckBoxProps;
+import { withOptions } from '../../../../common/withOptions';
+import { CheckBoxProps } from './_DATA';
 
 class Basic extends Component {
   render() {
@@ -16,10 +14,11 @@ class Basic extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Basic,
-  { onChange },
-  () => `import { Checkbox } from 'antd';
+  { CheckBoxProps },
+  `import React, { Component } from 'react';
+import { Checkbox } from 'antd';
 
 class Basic extends Component {
   render() {

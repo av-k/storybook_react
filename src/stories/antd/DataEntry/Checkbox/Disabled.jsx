@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Checkbox } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { CheckBoxProps } from '../../../../common/propsCollection';
-
-const { defaultChecked, disabled } = CheckBoxProps;
+import { withOptions } from '../../../../common/withOptions';
+import { CheckBoxProps } from './_DATA';
 
 class Disabled extends Component {
   render() {
@@ -21,10 +19,11 @@ class Disabled extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Disabled,
-  { defaultChecked, disabled },
-  () => `import { Checkbox } from 'antd';
+  { CheckBoxProps },
+  `import React, { Component } from 'react';
+import { Checkbox } from 'antd';
 
 class Disabled extends Component {
   render() {

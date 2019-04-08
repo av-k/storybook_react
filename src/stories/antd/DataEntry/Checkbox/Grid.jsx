@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Checkbox, Row, Col } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { CheckBoxProps } from '../../../../common/propsCollection';
-
-const { value } = CheckBoxProps;
+import { withOptions } from '../../../../common/withOptions';
+import { CheckBoxProps, CheckBoxGroupProps } from './_DATA';
 
 class Grid extends Component {
   state = {};
@@ -39,10 +37,11 @@ class Grid extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Grid,
-  { value },
-  () => `import { Checkbox, Row, Col } from 'antd';
+  { CheckBoxProps, CheckBoxGroupProps },
+  `import React, { Component } from 'react';
+import { Checkbox, Row, Col } from 'antd';
 
 class Grid extends Component {
   state = {};

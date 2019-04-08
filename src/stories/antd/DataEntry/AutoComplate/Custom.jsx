@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
-import injectInfoWithSourceCode from '../../../../common/injectInfoWithSourceCode';
-import { AutoCompleteProps } from '../../../../common/propsCollection';
+import { withOptions } from '../../../../common/withOptions';
+import { CommonProps } from './_DATA';
 import { action } from '@storybook/addon-actions';
-
-const { onSearch, placeholder } = AutoCompleteProps;
 
 class Custom extends Component {
   state = {
@@ -47,10 +45,11 @@ class Custom extends Component {
   }
 }
 
-export default injectInfoWithSourceCode(
+export default withOptions(
   Custom,
-  { onSearch, placeholder },
-  () => `import { AutoComplete } from 'antd';
+  { CommonProps },
+  `import React, { Component } from 'react';
+import { AutoComplete } from 'antd';
 
 class Custom extends Component {
   state = {
@@ -58,17 +57,17 @@ class Custom extends Component {
   };
 
   handleSearch = value => {
-	let result;
-	if (!value || value.indexOf('@') >= 0) {
-	  result = [];
-	} else {
-	  result = ['gmail.com', '163.com', 'qq.com'].map(
-		domain => $'{value}@'$'{domain}',
-	  );
-	}
-	this.setState({ result });
+    let result;
+    if (!value || value.indexOf('@') >= 0) {
+      result = [];
+    } else {
+      result = ['gmail.com', '163.com', 'qq.com'].map(
+        domain => \`\${value}@\${domain}\`,
+      );
+    }
+    this.setState({ result });
   };
-  
+
   render() {
     const Option = AutoComplete.Option;
     const { result } = this.state;
@@ -90,6 +89,5 @@ class Custom extends Component {
       </section>
     );
   }
-
 }`,
 );
