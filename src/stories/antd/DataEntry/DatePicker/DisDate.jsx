@@ -11,6 +11,7 @@ import {
   MonthPickerProps,
   RangePickerProps,
 } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const { MonthPicker, RangePicker } = DatePicker;
 
@@ -56,6 +57,7 @@ class DisDate extends Component {
         <h3 className="ex-title">Disabled Date & Time</h3>
 
         <DatePicker
+          onChange={action('Picked')}
           format={`${dateFormat} ${timeFormat}`}
           disabledDate={disabledDate}
           disabledTime={disabledDateTime}
@@ -63,10 +65,15 @@ class DisDate extends Component {
         />
         <br />
         <br />
-        <MonthPicker disabledDate={disabledDate} placeholder="Select month" />
+        <MonthPicker
+          onChange={action('Picked')}
+          disabledDate={disabledDate}
+          placeholder="Select month"
+        />
         <br />
         <br />
         <RangePicker
+          onChange={action('Picked')}
           disabledDate={disabledDate}
           disabledTime={disabledRangeTime}
           showTime={{

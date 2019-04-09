@@ -11,6 +11,7 @@ import {
   MonthPickerProps,
   RangePickerProps,
 } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Format extends Component {
   render() {
@@ -22,18 +23,21 @@ class Format extends Component {
       <section className="example">
         <h3 className="ex-title">Date Format</h3>
         <DatePicker
+          onChange={action('Picked')}
           defaultValue={moment('2015/01/01', dateFormat)}
           format={dateFormat}
         />
         <br />
         <br />
         <MonthPicker
+          onChange={action('Picked')}
           defaultValue={moment('2015/01', monthFormat)}
           format={monthFormat}
         />
         <br />
         <br />
         <RangePicker
+          onChange={action('Picked')}
           defaultValue={[
             moment('2015/01/01', dateFormat),
             moment('2015/01/01', dateFormat),

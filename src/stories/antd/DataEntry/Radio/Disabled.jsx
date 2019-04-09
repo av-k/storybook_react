@@ -4,6 +4,7 @@ import 'antd/lib/radio/style';
 import 'antd/lib/button/style';
 import { withOptions } from '../../../../common/withOptions';
 import { RadioProps } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Disabled extends Component {
   state = {
@@ -14,7 +15,11 @@ class Disabled extends Component {
     return (
       <section className="example">
         <h3 className="ex-title">Disabled</h3>
-        <Radio defaultChecked={false} disabled={this.state.disabled}>
+        <Radio
+          defaultChecked={false}
+          disabled={this.state.disabled}
+          onChange={e => action('Radio')(e.target.checked)}
+        >
           Disabled
         </Radio>
         <br />

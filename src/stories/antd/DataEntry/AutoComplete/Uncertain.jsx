@@ -64,16 +64,11 @@ class Uncertain extends Component {
             onSearch={this.handleSearch}
             placeholder="input here"
             optionLabelProp="text"
-            onSelect={action('Value Selected')}
+            onSelect={action('Selected')}
           >
             <Input
               suffix={
-                <Button
-                  className="search-btn"
-                  size="large"
-                  type="primary"
-                  onClick={action('Search Button Clicked')}
-                >
+                <Button className="search-btn" size="large" type="primary">
                   <Icon type="search" />
                 </Button>
               }

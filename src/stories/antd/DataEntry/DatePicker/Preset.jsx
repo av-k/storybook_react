@@ -6,6 +6,7 @@ import moment from 'moment';
 import { dateFormat, timeFormat } from '../../../../common/constants';
 import { withOptions } from '../../../../common/withOptions';
 import { CommonProps, RangePickerProps } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Preset extends Component {
   state = {};
@@ -16,6 +17,7 @@ class Preset extends Component {
       <section className="example">
         <h3 className="ex-title">Presetted Ranges</h3>
         <RangePicker
+          onChange={action('Picked')}
           ranges={{
             Today: [moment(), moment()],
             'This Month': [moment(), moment().endOf('month')],
@@ -24,6 +26,7 @@ class Preset extends Component {
         <br />
         <br />
         <RangePicker
+          onChange={action('Picked')}
           ranges={{
             Today: [moment(), moment()],
             'This Month': [moment(), moment().endOf('month')],

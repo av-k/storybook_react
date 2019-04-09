@@ -1,5 +1,5 @@
 export const CommonProps = [
-  'https://ant.design/components/form/#Form',
+  'https://ant.design/components/form/#API',
   {
     form: {
       type: 'object',

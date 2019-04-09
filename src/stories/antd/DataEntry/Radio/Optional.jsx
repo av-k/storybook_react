@@ -3,6 +3,7 @@ import { Radio } from 'antd';
 import 'antd/lib/radio/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const RadioGroup = Radio.Group;
 const plainOptions = ['Apple', 'Pear', 'Orange'];
@@ -55,6 +56,7 @@ class Optional extends Component {
 
   onChange1 = e => {
     console.log('radio1 checked', e.target.value);
+    action('Radio 1 Checked')(e.target.value);
     this.setState({
       value1: e.target.value,
     });
@@ -62,6 +64,7 @@ class Optional extends Component {
 
   onChange2 = e => {
     console.log('radio2 checked', e.target.value);
+    action('Radio 2 Checked')(e.target.value);
     this.setState({
       value2: e.target.value,
     });
@@ -69,6 +72,7 @@ class Optional extends Component {
 
   onChange3 = e => {
     console.log('radio3 checked', e.target.value);
+    action('Radio 3 Checked')(e.target.value);
     this.setState({
       value3: e.target.value,
     });

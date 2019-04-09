@@ -4,6 +4,7 @@ import 'antd/lib/slider/style';
 import 'antd/lib/icon/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class SliderIcon extends Component {
   state = {
@@ -49,6 +50,7 @@ class SliderIcon extends Component {
   }
 
   handleChange = value => {
+    action('Value')(value);
     this.setState({ value });
   };
 }

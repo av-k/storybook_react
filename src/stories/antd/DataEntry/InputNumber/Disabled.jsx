@@ -4,6 +4,7 @@ import 'antd/lib/input-number/style';
 import 'antd/lib/button/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Disabled extends Component {
   state = {
@@ -19,6 +20,7 @@ class Disabled extends Component {
           max={10}
           disabled={this.state.disabled}
           defaultValue={3}
+          onChange={e => action('Value')(e)}
         />
         <div style={{ marginTop: 20 }}>
           <Button onClick={this.toggle} type="primary">

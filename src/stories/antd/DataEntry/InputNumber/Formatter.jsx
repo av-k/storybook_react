@@ -3,6 +3,7 @@ import { InputNumber } from 'antd';
 import 'antd/lib/input-number/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Formatter extends Component {
   render() {
@@ -15,6 +16,7 @@ class Formatter extends Component {
             `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
           }
           parser={value => value.replace(/\$\s?|(,*)/g, '')}
+          onChange={e => action('Value')(e)}
         />
         <InputNumber
           style={{ marginLeft: '20px' }}
@@ -23,6 +25,7 @@ class Formatter extends Component {
           max={100}
           formatter={value => `${value}%`}
           parser={value => value.replace('%', '')}
+          onChange={e => action('Value')(e)}
         />
       </section>
     );

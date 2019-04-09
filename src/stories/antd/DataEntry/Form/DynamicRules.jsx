@@ -6,6 +6,7 @@ import 'antd/lib/button/style';
 import 'antd/lib/checkbox/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 
@@ -69,8 +70,10 @@ class DynamicRules extends Component {
 
   check = () => {
     this.props.form.validateFields(err => {
+      action('Error')(err);
       if (!err) {
         console.info('success');
+        action('Success')();
       }
     });
   };

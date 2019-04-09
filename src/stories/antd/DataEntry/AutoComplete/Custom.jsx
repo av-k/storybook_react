@@ -36,7 +36,7 @@ class Custom extends Component {
           style={{ width: 200 }}
           onSearch={this.handleSearch}
           placeholder="input here"
-          onSelect={action('Value Selected')}
+          onSelect={action('Selected')}
         >
           {children}
         </AutoComplete>

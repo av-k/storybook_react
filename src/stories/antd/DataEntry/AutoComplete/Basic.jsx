@@ -20,7 +20,7 @@ class Basic extends Component {
             style={{ width: 200 }}
             onSearch={this.handleSearch}
             placeholder="input here"
-            onSelect={action('Value Selected')}
+            onSelect={action('Selected')}
           />
         </section>
       </>

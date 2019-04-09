@@ -3,6 +3,7 @@ import { Select } from 'antd';
 import 'antd/lib/select/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const Option = Select.Option;
 
@@ -21,6 +22,7 @@ class AutoComplete extends Component {
           onChange={this.handleChange}
           filterOption={false}
           placeholder="Enter the account name"
+          onSelect={value => action('Value')(value)}
         >
           {this.state.options}
         </Select>

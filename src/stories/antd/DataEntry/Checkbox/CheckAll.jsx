@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Checkbox } from 'antd';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const defaultCheckedList = ['Apple', 'Orange'];
 const CheckboxGroup = Checkbox.Group;
@@ -38,20 +39,25 @@ class CheckAll extends Component {
     );
   }
 
-  onChange = checkedList =>
+  onChange = checkedList => {
     this.setState({
       checkedList,
       indeterminate:
         !!checkedList.length && checkedList.length < plainOptions.length,
       checkAll: checkedList.length === plainOptions.length,
     });
+  };
 
-  onCheckAllChange = e =>
-    this.setState({
-      checkedList: e.target.checked ? plainOptions : [],
-      indeterminate: false,
-      checkAll: e.target.checked,
-    });
+  onCheckAllChange = e => {
+    this.setState(
+      {
+        checkedList: e.target.checked ? plainOptions : [],
+        indeterminate: false,
+        checkAll: e.target.checked,
+      },
+      () => action('Checked List')(this.state.checkedList),
+    );
+  };
 }
 
 export default withOptions(

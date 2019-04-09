@@ -4,6 +4,7 @@ import 'antd/lib/slider/style';
 import 'antd/lib/switch/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Basic extends Component {
   state = {
@@ -17,8 +18,17 @@ class Basic extends Component {
       <section className="example">
         <h3 className="ex-title">Basic</h3>
         <div style={{ width: 1000 }}>
-          <Slider defaultValue={30} disabled={disabled} />
-          <Slider range defaultValue={[20, 50]} disabled={disabled} />
+          <Slider
+            defaultValue={30}
+            disabled={disabled}
+            onChange={e => action('Value')(e)}
+          />
+          <Slider
+            range
+            defaultValue={[20, 50]}
+            disabled={disabled}
+            onChange={e => action('Value')(e)}
+          />
           Disabled:{' '}
           <Switch
             size="small"

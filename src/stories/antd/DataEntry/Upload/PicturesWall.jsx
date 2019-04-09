@@ -59,13 +59,17 @@ class PicturesWall extends Component {
   handleCancel = () => this.setState({ previewVisible: false });
 
   handlePreview = file => {
+    action('Preview')(file);
     this.setState({
       previewImage: file.url || file.thumbUrl,
       previewVisible: true,
     });
   };
 
-  handleChange = ({ fileList }) => this.setState({ fileList });
+  handleChange = ({ fileList }) => {
+    action('File List')(file);
+    this.setState({ fileList });
+  };
 }
 
 export default withOptions(

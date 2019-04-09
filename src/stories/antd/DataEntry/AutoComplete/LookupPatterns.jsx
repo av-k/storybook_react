@@ -86,7 +86,7 @@ class Pattern extends Component {
             dataSource={options}
             placeholder="input here"
             optionLabelProp="value"
-            onSelect={action('Value Selected')}
+            onSelect={action('Selected')}
           >
             <Input
               suffix={<Icon type="search" className="certain-category-icon" />}

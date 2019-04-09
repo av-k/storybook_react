@@ -7,6 +7,7 @@ import 'antd/lib/button/style';
 import 'antd/lib/icon/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 
@@ -54,11 +55,13 @@ class AdvancedSearch extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       console.log('Received values of form: ', values);
+      action('Submit Form')(values);
     });
   };
 
   handleReset = () => {
     this.props.form.resetFields();
+    action('Reset Fields')();
   };
 
   toggle = () => {

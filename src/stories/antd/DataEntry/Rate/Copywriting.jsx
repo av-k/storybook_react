@@ -3,6 +3,7 @@ import { Rate } from 'antd';
 import 'antd/lib/rate/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Copywriting extends Component {
   state = {
@@ -14,7 +15,11 @@ class Copywriting extends Component {
     return (
       <section className="example">
         <h3 className="ex-title">Show copywriting</h3>
-        <Rate onChange={this.handleChange} value={value} />
+        <Rate
+          onChange={this.handleChange}
+          value={value}
+          onChange={value => action('Rate')(value)}
+        />
         {value && <span className="ant-rate-text">{value} stars</span>}
       </section>
     );

@@ -6,6 +6,7 @@ import 'antd/lib/row/style';
 import 'antd/lib/col/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class IntegerStep extends React.Component {
   state = {
@@ -13,6 +14,7 @@ class IntegerStep extends React.Component {
   };
 
   onChange = value => {
+    action('Value')(value);
     this.setState({
       inputValue: value,
     });
@@ -49,6 +51,7 @@ class DecimalStep extends React.Component {
   };
 
   onChange = value => {
+    action('Value')(value);
     this.setState({
       inputValue: value,
     });

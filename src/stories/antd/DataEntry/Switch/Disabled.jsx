@@ -4,6 +4,7 @@ import 'antd/lib/switch/style';
 import 'antd/lib/button/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Disabled extends Component {
   state = {
@@ -15,7 +16,11 @@ class Disabled extends Component {
       <section className="example">
         <h3 className="ex-title">Disabled</h3>
         <div>
-          <Switch disabled={this.state.disabled} defaultChecked />
+          <Switch
+            disabled={this.state.disabled}
+            defaultChecked
+            onChange={e => action('Value')(e)}
+          />
           <br />
           <br />
           <Button type="primary" onClick={this.toggle}>
@@ -27,6 +32,7 @@ class Disabled extends Component {
   }
 
   toggle = () => {
+    action('Disabled')(!this.state.disabled);
     this.setState({
       disabled: !this.state.disabled,
     });

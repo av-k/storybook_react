@@ -7,6 +7,7 @@ import 'antd/lib/input/style';
 import 'antd/lib/radio/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 const CollectionCreateForm = Form.create()(props => {
@@ -65,6 +66,7 @@ class FormInModal extends Component {
   handleCreate = () => {
     const form = this.form;
     form.validateFields((err, values) => {
+      action('Submit Form')(values);
       if (err) {
         return;
       }

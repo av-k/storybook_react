@@ -4,6 +4,7 @@ import 'antd/lib/form/style';
 import 'antd/lib/input/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 
@@ -20,6 +21,7 @@ const CustomizedForm = Form.create({
     };
   },
   onValuesChange(_, values) {
+    action('Changed')(values);
     console.log(values);
   },
 })(props => {

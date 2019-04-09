@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Checkbox, Button } from 'antd';
 import { withOptions } from '../../../../common/withOptions';
 import { CheckBoxProps } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Controll extends Component {
   state = {
@@ -48,7 +49,10 @@ class Controll extends Component {
 
   toggleDisable = () => this.setState({ disabled: !this.state.disabled });
 
-  onChange = e => this.setState({ checked: e.target.checked });
+  onChange = e => {
+    action('Checked')(e.target.checked);
+    this.setState({ checked: e.target.checked });
+  };
 }
 
 export default withOptions(

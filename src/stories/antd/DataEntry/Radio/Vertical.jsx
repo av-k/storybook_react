@@ -4,6 +4,7 @@ import 'antd/lib/radio/style';
 import 'antd/lib/input/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const RadioGroup = Radio.Group;
 
@@ -35,7 +36,10 @@ class Vertical extends Component {
           <Radio style={radioStyle} value={4}>
             More...
             {this.state.value === 4 ? (
-              <Input style={{ width: 100, marginLeft: 10 }} />
+              <Input
+                style={{ width: 100, marginLeft: 10 }}
+                onChange={e => action('Value')(e.target.value)}
+              />
             ) : null}
           </Radio>
         </RadioGroup>
@@ -44,6 +48,7 @@ class Vertical extends Component {
   }
 
   onChange = e => {
+    action('Checked #')(e.target.value);
     this.setState({
       value: e.target.value,
     });

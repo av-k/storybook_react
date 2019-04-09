@@ -7,6 +7,7 @@ import 'antd/lib/button/style';
 import 'antd/lib/checkbox/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 
@@ -79,6 +80,7 @@ class LoginForm extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', { values });
+        action('Submit Form')(values);
       }
     });
   };

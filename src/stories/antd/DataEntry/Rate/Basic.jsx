@@ -3,13 +3,14 @@ import { Rate } from 'antd';
 import 'antd/lib/rate/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Basic extends Component {
   render() {
     return (
       <section className="example">
         <h3 className="ex-title">Basic</h3>
-        <Rate />
+        <Rate onChange={value => action('Rate')(value)} />
       </section>
     );
   }

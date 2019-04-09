@@ -8,6 +8,7 @@ import 'antd/lib/button/style';
 import { dateFormat, timeFormat } from '../../../../common/constants';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 const MonthPicker = DatePicker.MonthPicker;
@@ -87,6 +88,7 @@ class TimeControls extends Component {
     e.preventDefault();
 
     this.props.form.validateFields((err, fieldsValue) => {
+      action('Submit Form')(values);
       if (err) {
         return;
       }

@@ -5,6 +5,7 @@ import 'antd/lib/date-picker/style';
 import { dateFormat, timeFormat } from '../../../../common/constants';
 import { withOptions } from '../../../../common/withOptions';
 import { CommonProps, DatePickerProps, RangePickerProps } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class ChooseTime extends Component {
   render() {
@@ -14,6 +15,7 @@ class ChooseTime extends Component {
       <section className="example">
         <h3 className="ex-title">Choose Time</h3>
         <DatePicker
+          onChange={action('Picked')}
           showTime
           format={`${dateFormat} ${timeFormat}`}
           placeholder="Select Time"
@@ -21,6 +23,7 @@ class ChooseTime extends Component {
         <br />
         <br />
         <RangePicker
+          onChange={action('Picked')}
           showTime={{ format: timeFormat }}
           format={`${dateFormat} ${timeFormat}`}
           placeholder={['Start Time', 'End Time']}

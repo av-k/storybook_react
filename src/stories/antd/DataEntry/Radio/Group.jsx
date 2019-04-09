@@ -3,6 +3,7 @@ import { Radio } from 'antd';
 import 'antd/lib/radio/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const RadioGroup = Radio.Group;
 
@@ -27,6 +28,7 @@ class Group extends Component {
 
   onChange = e => {
     console.log('radio checked', e.target.value);
+    action('Checked #')(e.target.value);
     this.setState({
       value: e.target.value,
     });

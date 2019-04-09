@@ -3,13 +3,19 @@ import { InputNumber } from 'antd';
 import 'antd/lib/input-number/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Basic extends Component {
   render() {
     return (
       <section className="example">
         <h3 className="ex-title">Basic</h3>
-        <InputNumber min={1} max={10} defaultValue={3} />
+        <InputNumber
+          min={1}
+          max={10}
+          defaultValue={3}
+          onChange={e => action('Value')(e)}
+        />
       </section>
     );
   }

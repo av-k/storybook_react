@@ -5,6 +5,7 @@ import 'antd/lib/icon/style';
 import 'antd/lib/message/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -57,6 +58,7 @@ class Avatar extends Component {
   }
 
   handleChange = info => {
+    action('Info')(info);
     if (info.file.status === 'uploading') {
       this.setState({ loading: true });
       return;

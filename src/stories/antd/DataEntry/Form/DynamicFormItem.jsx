@@ -6,6 +6,7 @@ import 'antd/lib/icon/style';
 import 'antd/lib/button/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 let uuid = 0;
@@ -125,6 +126,7 @@ class DynamicFormItem extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        action('Submit Form')(values);
       }
     });
   };

@@ -3,6 +3,7 @@ import { Slider } from 'antd';
 import 'antd/lib/slider/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const marks = {
   0: '0°C',
@@ -23,17 +24,41 @@ class Graduated extends Component {
         <h3 className="ex-title">Graduated slider</h3>
         <div>
           <h4>included=true</h4>
-          <Slider marks={marks} defaultValue={37} />
-          <Slider range marks={marks} defaultValue={[26, 37]} />
+          <Slider
+            marks={marks}
+            defaultValue={37}
+            onChange={e => action('Value')(e)}
+          />
+          <Slider
+            range
+            marks={marks}
+            defaultValue={[26, 37]}
+            onChange={e => action('Value')(e)}
+          />
 
           <h4>included=false</h4>
-          <Slider marks={marks} included={false} defaultValue={37} />
+          <Slider
+            marks={marks}
+            included={false}
+            defaultValue={37}
+            onChange={e => action('Value')(e)}
+          />
 
           <h4>marks & step</h4>
-          <Slider marks={marks} step={10} defaultValue={37} />
+          <Slider
+            marks={marks}
+            step={10}
+            defaultValue={37}
+            onChange={e => action('Value')(e)}
+          />
 
           <h4>step=null</h4>
-          <Slider marks={marks} step={null} defaultValue={37} />
+          <Slider
+            marks={marks}
+            step={null}
+            defaultValue={37}
+            onChange={e => action('Value')(e)}
+          />
         </div>
       </section>
     );

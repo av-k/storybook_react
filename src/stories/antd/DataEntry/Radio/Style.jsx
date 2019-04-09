@@ -3,6 +3,7 @@ import { Radio } from 'antd';
 import 'antd/lib/radio/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -13,7 +14,10 @@ class Style extends Component {
       <section className="example">
         <h3 className="ex-title">Radio Style</h3>
         <div>
-          <RadioGroup defaultValue="a">
+          <RadioGroup
+            defaultValue="a"
+            onChange={e => action('Value')(e.target.value)}
+          >
             <RadioButton value="a">Hangzhou</RadioButton>
             <RadioButton value="b">Shanghai</RadioButton>
             <RadioButton value="c">Beijing</RadioButton>
@@ -21,7 +25,10 @@ class Style extends Component {
           </RadioGroup>
         </div>
         <div style={{ marginTop: 16 }}>
-          <RadioGroup defaultValue="a">
+          <RadioGroup
+            defaultValue="a"
+            onChange={e => action('Value')(e.target.value)}
+          >
             <RadioButton value="a">Hangzhou</RadioButton>
             <RadioButton value="b" disabled>
               Shanghai

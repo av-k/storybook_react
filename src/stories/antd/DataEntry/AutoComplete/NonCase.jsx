@@ -20,7 +20,7 @@ class NonCase extends Component {
               .toUpperCase()
               .indexOf(inputValue.toUpperCase()) !== -1
           }
-          onSelect={action('Value Selected')}
+          onSelect={action('Selected')}
         />
       </section>
     );

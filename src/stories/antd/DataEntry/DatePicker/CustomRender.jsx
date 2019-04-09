@@ -3,6 +3,7 @@ import { DatePicker } from 'antd';
 import 'antd/lib/date-picker/style';
 import { withOptions } from '../../../../common/withOptions';
 import { CommonProps, DatePickerProps, RangePickerProps } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class CustomRender extends Component {
   render() {
@@ -12,6 +13,7 @@ class CustomRender extends Component {
       <section className="example">
         <h3 className="ex-title">Customized Date Rendering</h3>
         <DatePicker
+          onChange={action('Picked')}
           dateRender={current => {
             const style = {};
             if (current.date() === 1) {
@@ -28,6 +30,7 @@ class CustomRender extends Component {
         <br />
         <br />
         <RangePicker
+          onChange={action('Picked')}
           dateRender={current => {
             const style = {};
             if (current.date() === 1) {

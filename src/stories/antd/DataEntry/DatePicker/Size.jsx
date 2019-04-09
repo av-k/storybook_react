@@ -4,6 +4,7 @@ import 'antd/lib/date-picker/style';
 import 'antd/lib/radio/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Size extends Component {
   state = {
@@ -24,13 +25,18 @@ class Size extends Component {
         </Radio.Group>
         <br />
         <br />
-        <DatePicker size={size} />
+        <DatePicker onChange={action('Picked')} size={size} />
         <br />
         <br />
-        <MonthPicker size={size} placeholder="Select Month" />
+        <MonthPicker
+          onChange={action('Picked')}
+          s
+          size={size}
+          placeholder="Select Month"
+        />
         <br />
         <br />
-        <RangePicker size={size} />
+        <RangePicker onChange={action('Picked')} size={size} />
         <br />
         <br />
         <WeekPicker size={size} placeholder="Select Week" />

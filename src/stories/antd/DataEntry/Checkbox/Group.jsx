@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withOptions } from '../../../../common/withOptions';
 import { Checkbox } from 'antd';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Group extends Component {
   render() {
@@ -25,10 +26,18 @@ class Group extends Component {
       <section className="example">
         <h3 className="ex-title">Checkbox Group</h3>
 
-        <CheckboxGroup options={plainOptions} defaultValue={['Apple']} />
+        <CheckboxGroup
+          options={plainOptions}
+          defaultValue={['Apple']}
+          onChange={action('Checkbox Group 1')}
+        />
         <br />
         <br />
-        <CheckboxGroup options={options} defaultValue={['Pear']} />
+        <CheckboxGroup
+          options={options}
+          defaultValue={['Pear']}
+          onChange={action('Checkbox Group 2')}
+        />
         <br />
         <br />
         <CheckboxGroup

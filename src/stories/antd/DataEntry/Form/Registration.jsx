@@ -25,6 +25,7 @@ import 'antd/lib/button/style';
 import 'antd/lib/auto-complete/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -255,6 +256,7 @@ class Registration extends Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((error, values) => {
       if (!error) console.log('Here error: ', { error, values });
+      action('Submit Form')(values);
     });
   };
 

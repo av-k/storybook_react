@@ -3,6 +3,7 @@ import { Slider } from 'antd';
 import 'antd/lib/slider/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 function formatter(value) {
   return `${value}%`;
@@ -14,8 +15,8 @@ class Custom extends Component {
       <section className="example">
         <h3 className="ex-title">Customerize tooltip</h3>
         <div>
-          <Slider tipFormatter={formatter} />
-          <Slider tipFormatter={null} />
+          <Slider tipFormatter={formatter} onChange={e => action('Value')(e)} />
+          <Slider tipFormatter={null} onChange={e => action('Value')(e)} />
         </div>
       </section>
     );

@@ -3,6 +3,7 @@ import { DatePicker } from 'antd';
 import 'antd/lib/date-picker/style';
 import { withOptions } from '../../../../common/withOptions';
 import { CommonProps, DatePickerProps, RangePickerProps } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const { RangePicker } = DatePicker;
 
@@ -22,6 +23,7 @@ class ControlledDatePicker extends Component {
   render() {
     return (
       <DatePicker
+        onChange={action('Picked')}
         mode={this.state.mode}
         showTime
         onOpenChange={this.handleOpenChange}

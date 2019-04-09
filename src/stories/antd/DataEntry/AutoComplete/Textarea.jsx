@@ -20,7 +20,7 @@ class Textarea extends Component {
           dataSource={dataSource}
           style={{ width: 200 }}
           onSearch={this.handleSearch}
-          onSelect={action('Value Selected')}
+          onSelect={action('Selected')}
         >
           <TextArea
             placeholder="input here"

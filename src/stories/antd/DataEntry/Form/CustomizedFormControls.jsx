@@ -6,6 +6,7 @@ import 'antd/lib/select/style';
 import 'antd/lib/button/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -106,6 +107,7 @@ class CustomizedFormControls extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        action('Submit Form')(values);
       }
     });
   };

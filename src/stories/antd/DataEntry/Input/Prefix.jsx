@@ -4,6 +4,7 @@ import 'antd/lib/input/style';
 import 'antd/lib/icon/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Prefix extends Component {
   state = {
@@ -38,6 +39,7 @@ class Prefix extends Component {
   };
 
   onChangeUserName = e => {
+    action('Value')(e.target.value);
     this.setState({ userName: e.target.value });
   };
 }

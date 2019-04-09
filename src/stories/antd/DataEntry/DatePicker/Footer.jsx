@@ -8,6 +8,7 @@ import {
   RangePickerProps,
   MonthPickerProps,
 } from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Footer extends Component {
   state = {};
@@ -17,19 +18,31 @@ class Footer extends Component {
     return (
       <section className="example">
         <h3 className="ex-title">Extra Footer</h3>
-        <DatePicker renderExtraFooter={() => 'extra footer'} />
         <DatePicker
+          onChange={action('Picked')}
+          renderExtraFooter={() => 'extra footer'}
+        />
+        <DatePicker
+          onChange={action('Picked')}
           style={{ marginLeft: '20px' }}
           renderExtraFooter={() => 'extra footer'}
           showTime
         />
         <br />
         <br />
-        <RangePicker renderExtraFooter={() => 'extra footer'} />
+        <RangePicker
+          onChange={action('Picked')}
+          renderExtraFooter={() => 'extra footer'}
+        />
         <br />
         <br />
-        <RangePicker renderExtraFooter={() => 'extra footer'} showTime />
+        <RangePicker
+          onChange={action('Picked')}
+          renderExtraFooter={() => 'extra footer'}
+          showTime
+        />
         <MonthPicker
+          onChange={action('Picked')}
           style={{ marginLeft: '20px' }}
           renderExtraFooter={() => 'extra footer'}
           placeholder="Select month"
