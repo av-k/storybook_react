@@ -3,6 +3,12 @@ import { Carousel } from 'antd';
 import 'antd/lib/carousel/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
+
+const onChange = a => {
+  console.log(a);
+  action('Slide #')(a + 1);
+};
 
 class FadeIn extends Component {
   state = {};
@@ -11,7 +17,7 @@ class FadeIn extends Component {
     return (
       <section className="example">
         <h3 className="ex-title">Fade In</h3>
-        <Carousel effect="fade">
+        <Carousel effect="fade" afterChange={onChange}>
           <div>
             <h3>1</h3>
           </div>

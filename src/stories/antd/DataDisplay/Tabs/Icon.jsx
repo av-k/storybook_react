@@ -4,6 +4,7 @@ import 'antd/lib/tabs/style';
 import 'antd/lib/icon/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const TabPane = Tabs.TabPane;
 
@@ -12,7 +13,7 @@ class IconTabs extends Component {
     return (
       <section className="example">
         <h3 className="ex-title">Icon</h3>
-        <Tabs>
+        <Tabs onChange={key => action('Active Tab Key')(key)}>
           <TabPane
             tab={
               <span>

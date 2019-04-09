@@ -5,6 +5,7 @@ import moment from 'moment';
 import { dateFormat } from '../../../../common/constants';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Select extends Component {
   state = {
@@ -26,6 +27,7 @@ class Select extends Component {
             value={value}
             onSelect={this.onSelect}
             onPanelChange={this.onPanelChange}
+            onSelect={value => action('Date')(value.format(dateFormat))}
           />
         </div>
       </section>

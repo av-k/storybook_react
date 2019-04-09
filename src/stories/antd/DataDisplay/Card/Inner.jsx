@@ -3,6 +3,7 @@ import { Card } from 'antd';
 import 'antd/lib/card/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Inner extends Component {
   render() {
@@ -24,7 +25,17 @@ class Inner extends Component {
           <Card
             type="inner"
             title="Inner Card title"
-            extra={<a href="#">More</a>}
+            extra={
+              <a
+                href="http://google.com"
+                onClick={e => {
+                  e.preventDefault();
+                  action('Go to')(e.target.href);
+                }}
+              >
+                More
+              </a>
+            }
           >
             Inner Card content
           </Card>
@@ -32,7 +43,17 @@ class Inner extends Component {
             style={{ marginTop: 16 }}
             type="inner"
             title="Inner Card title"
-            extra={<a href="#">More</a>}
+            extra={
+              <a
+                href="http://google.com"
+                onClick={e => {
+                  e.preventDefault();
+                  action('Go to')(e.target.href);
+                }}
+              >
+                More
+              </a>
+            }
           >
             Inner Card content
           </Card>

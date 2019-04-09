@@ -5,6 +5,7 @@ import 'antd/lib/icon/style';
 import 'antd/lib/avatar/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const { Meta } = Card;
 
@@ -22,9 +23,9 @@ class Config extends Component {
             />
           }
           actions={[
-            <Icon type="setting" />,
-            <Icon type="edit" />,
-            <Icon type="ellipsis" />,
+            <Icon type="setting" onClick={action('Settings')} />,
+            <Icon type="edit" onClick={action('Edit')} />,
+            <Icon type="ellipsis" onClick={action('More')} />,
           ]}
         >
           <Meta

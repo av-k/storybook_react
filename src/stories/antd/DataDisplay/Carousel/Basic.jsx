@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Carousel } from 'antd';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
-const onChange = (a, b, c) => {
-  console.log(a, b, c);
+const onChange = a => {
+  console.log(a);
+  action('Slide #')(a + 1);
 };
 
 class Basic extends Component {

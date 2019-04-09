@@ -3,6 +3,7 @@ import { Card } from 'antd';
 import 'antd/lib/card/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Tab extends Component {
   state = {
@@ -56,7 +57,17 @@ class Tab extends Component {
           <Card
             style={{ width: '100%' }}
             title="Card title"
-            extra={<a href="#">More</a>}
+            extra={
+              <a
+                href="http://google.com"
+                onClick={e => {
+                  e.preventDefault();
+                  action('Go to')(e.target.href);
+                }}
+              >
+                More
+              </a>
+            }
             tabList={tabList}
             onTabChange={key => {
               this.onTabChange(key, 'key');

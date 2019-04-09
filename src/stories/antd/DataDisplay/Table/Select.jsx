@@ -3,6 +3,7 @@ import { Table } from 'antd';
 import 'antd/lib/table/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const columns = [
   {
@@ -48,8 +49,11 @@ const data = [
 ];
 
 const rowSelection = {
-  onChange: (selectedRowKeys, selectedRows) =>
-    console.log({ selectedRowKeys, selectedRows }),
+  onChange: (selectedRowKeys, selectedRows) => {
+    action('Selected Row Keys')(selectedRowKeys[0]);
+    action('Selected Rows')(selectedRows[0]);
+    console.log({ selectedRowKeys, selectedRows });
+  },
 };
 
 class Basic extends Component {

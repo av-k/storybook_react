@@ -4,6 +4,7 @@ import 'antd/lib/calendar/style';
 import 'antd/lib/badge/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Notice extends Component {
   render() {
@@ -13,6 +14,7 @@ class Notice extends Component {
         <Calendar
           dateCellRender={dateCellRender}
           monthCellRender={monthCellRender}
+          onSelect={date => action('Date')(date)}
         />
       </section>
     );

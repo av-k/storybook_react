@@ -7,6 +7,7 @@ import 'antd/lib/spin/style';
 import reqwest from 'reqwest';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const fakeDataUrl =
   'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
@@ -85,9 +86,12 @@ class LoadMore extends Component {
   };
 
   onLoadMore = () => {
-    this.setState({
-      loadingMore: true,
-    });
+    this.setState(
+      {
+        loadingMore: true,
+      },
+      () => action('Load More?')(this.state.loadingMore),
+    );
     this.getData(res => {
       const data = this.state.data.concat(res.results);
       this.setState(
@@ -100,6 +104,7 @@ class LoadMore extends Component {
           // In real scene, you can using public method of react-virtualized:
           // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
           window.dispatchEvent(new Event('resize'));
+          action('Load More?')(this.state.loadingMore);
         },
       );
     });

@@ -6,6 +6,7 @@ import 'antd/lib/icon/style';
 import 'antd/lib/switch/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 class Dynamic extends Component {
   state = {
@@ -51,6 +52,7 @@ class Dynamic extends Component {
   increase = () => {
     const count = this.state.count + 1;
     this.setState({ count });
+    action('Value')(count);
   };
 
   decline = () => {
@@ -61,7 +63,7 @@ class Dynamic extends Component {
     this.setState({ count });
   };
 
-  onChange = show => this.setState({ show });
+  onChange = show => this.setState({ show }, () => action('isShowing')(show));
 }
 
 export default withOptions(

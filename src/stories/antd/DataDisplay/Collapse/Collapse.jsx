@@ -3,6 +3,7 @@ import { Collapse } from 'antd';
 import 'antd/lib/collapse/style';
 import { withOptions } from '../../../../common/withOptions';
 import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
 
 const Panel = Collapse.Panel;
 
@@ -17,7 +18,10 @@ class CollapseBasic extends Component {
     return (
       <section className="example">
         <h3 className="ex-title">Collapse</h3>
-        <Collapse defaultActiveKey={['1']}>
+        <Collapse
+          defaultActiveKey={['1']}
+          onChange={e => action('Revealed Items')(e)}
+        >
           <Panel header="This is panel header 1" key="1">
             <p>{text}</p>
           </Panel>
