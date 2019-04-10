@@ -155,7 +155,7 @@ export const CommonProps = [
 ];
 
 export const ModalMethodsObjectProps = [
-  '',
+  'https://ant.design/components/modal/#Modal.method()',
   {
     autoFocusButton: {
       type: 'null|string: ok cancel',
