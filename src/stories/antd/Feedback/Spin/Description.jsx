@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Spin, Alert } from 'antd';
 import 'antd/lib/spin/style';
 import 'antd/lib/alert/style';
+import { withOptions } from '../../../../common/withOptions';
+import * as AllProps from './_DATA';
 
 class Description extends Component {
   render() {
@@ -20,4 +22,28 @@ class Description extends Component {
   }
 }
 
-export default Description;
+export default withOptions(
+  Description,
+  AllProps,
+  `import React, { Component } from 'react';
+import { Spin, Alert } from 'antd';
+import 'antd/lib/spin/style';
+import 'antd/lib/alert/style';
+
+class Description extends Component {
+  render() {
+    return (
+      <section className="example">
+        <h3 className="ex-title">Customized description</h3>
+        <Spin tip="Loading...">
+          <Alert
+            message="Alert message title"
+            description="Further details about the context of this alert."
+            type="info"
+          />
+        </Spin>
+      </section>
+    );
+  }
+}`,
+);
