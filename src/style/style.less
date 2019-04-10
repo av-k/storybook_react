@@ -22,6 +22,9 @@ p.text {
   font-size: 16px;
   color: #666;
 }
+ul {
+  list-style: none;
+}
 
 p.text .allotted {
   padding: 3px;
@@ -36,14 +39,53 @@ li {
 }
 
 .example {
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   padding: 20px;
   border: 1px solid #ddd;
+  border-bottom-style: dashed;
 }
 
 .ex-title {
   font-size: 24px;
   color: #666;
+}
+.options {
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.prop-category {
+  font-size: 18px;
+  color: #666;
+}
+
+.prop-link {
+  margin: 0 10px;
+}
+
+.prop-name {
+  align-self: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  background: #f5f5f5;
+}
+.prop-name:hover {
+  cursor: pointer;
+  background: #e3e3e3;
+}
+
+.prop-type {
+  padding: 2px 8px;
+  font-size: 13px;
+  color: #1890ff;
+}
+.prop-type:hover {
+  cursor: pointer;
+  background: #e6f7ff;
 }
 
 .ex-toggle {
@@ -68,6 +110,6 @@ li {
   margin-left: 20px !important;
 }
 
-.mb20{
+.mb20 {
   margin-bottom: 20px !important;
 }

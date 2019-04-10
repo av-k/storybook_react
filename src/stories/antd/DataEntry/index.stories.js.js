@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import AutoComplate from './AutoComplate/index';
+import AutoComplete from './AutoComplete/index';
 import Checkbox from './Checkbox/index';
 import DatePicker from './DatePicker/index';
 import Form from './Form/index';
@@ -16,7 +16,7 @@ import Upload from './Upload/index';
 import '../../../style/index.less';
 
 storiesOf('Ant Design/Data Entry', module)
-  .add('AutoComplate', () => <AutoComplate />)
+  .add('AutoComplete', () => <AutoComplete />)
   .add('Checkbox', () => <Checkbox />)
   .add('DatePicker', () => <DatePicker />)
   .add('Form', () => <Form />)

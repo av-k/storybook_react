@@ -2,6 +2,50 @@ import React, { Component } from 'react';
 import { Switch, Button } from 'antd';
 import 'antd/lib/switch/style';
 import 'antd/lib/button/style';
+import { withOptions } from '../../../../common/withOptions';
+import * as AllProps from './_DATA';
+import { action } from '@storybook/addon-actions';
+
+class Disabled extends Component {
+  state = {
+    disabled: true,
+  };
+
+  render() {
+    return (
+      <section className="example">
+        <h3 className="ex-title">Disabled</h3>
+        <div>
+          <Switch
+            disabled={this.state.disabled}
+            defaultChecked
+            onChange={e => action('Value')(e)}
+          />
+          <br />
+          <br />
+          <Button type="primary" onClick={this.toggle}>
+            Toggle disabled
+          </Button>
+        </div>
+      </section>
+    );
+  }
+
+  toggle = () => {
+    action('Disabled')(!this.state.disabled);
+    this.setState({
+      disabled: !this.state.disabled,
+    });
+  };
+}
+
+export default withOptions(
+  Disabled,
+  AllProps,
+  `import React, { Component } from 'react';
+import { Switch, Button } from 'antd';
+import 'antd/lib/switch/style';
+import 'antd/lib/button/style';
 
 class Disabled extends Component {
   state = {
@@ -26,6 +70,5 @@ class Disabled extends Component {
       disabled: !this.state.disabled,
     });
   }
-}
-
-export default Disabled;
+}`,
+);
